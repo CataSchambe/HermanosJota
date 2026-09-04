@@ -115,36 +115,6 @@ Hermanos_Jota/
 3. Selecciona la carpeta `Hermanos_Jota`.
 4. Haz clic derecho sobre `index.html` y elige **"Ver en el explorador"** (`Ctrl + Shift + W`).
 
----
-
-## 🚀 Cómo Subir el Proyecto a GitHub
-
-Abre una terminal (PowerShell o Git Bash) en la raíz del proyecto (`c:\Users\santi\Documents\ITBA_CATA\SPRING_1-2\Hermanos_Jota`) y ejecuta los siguientes comandos:
-
-```bash
-# 1. Inicializar el repositorio Git local
-git init
-
-# 2. Agregar todos los archivos al área de preparación (staging)
-git add .
-
-# 3. Realizar el primer commit
-git commit -m "feat: entrega final proyecto Hermanos Jota - Mueblería y Hogar"
-
-# 4. Cambiar la rama principal a 'main'
-git branch -M main
-
-# 5. Vincular con tu repositorio remoto de GitHub (reemplaza con tu URL real)
-git remote add origin https://github.com/TU-USUARIO/Hermanos_Jota.git
-
-# 6. Subir los archivos a GitHub
-git push -u origin main
-```
-
-> **Nota:** El archivo `.gitignore` ya está configurado para evitar subir archivos temporales de Visual Studio (`.vs/`, `.vscode/`), logs o archivos ocultos del sistema operativo (`.DS_Store`, `Thumbs.db`).
-
----
-
 ## 🎨 Guía de Estilo y Paleta Oficial
 
 | Muestra | Color | Código HEX | Rol en el Diseño |
@@ -158,10 +128,9 @@ git push -u origin main
 
 - **Tipografía de Encabezados:** *Playfair Display* (Serif, mayúsculas, tracking amplio).
 - **Tipografía de Cuerpo y Botones:** *Inter* (Sans-serif, altura de línea 1.6 para lectura cómoda).
-
 ---
-
 ## 👥 Créditos y Autoría
 - **Institución:** Instituto Tecnológico de Buenos Aires (ITBA)
-- **Materia:** Desarrollo Web / Spring 1-2
+- **Materia:** Desarrollo FullStack / Spring 1-2
+- **Nombre completo** : Catalina Schamberger
 - **Proyecto:** Hermanos Jota — Ebanistería y Hogar
