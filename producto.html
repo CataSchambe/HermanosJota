@@ -106,52 +106,67 @@
           >
         </div>
 
-        <!-- Riel de Miniaturas Intercambiables con Eventos JS -->
-        <div class="thumbnails-rail" role="region" aria-label="Galería de tomas fotográficas">
+        <!-- Riel de Miniaturas / Selector de Colección con Eventos JS -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.25rem;">
+          <span style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-siena); font-weight: 600;">
+            Otras piezas de la colección:
+          </span>
+          <span id="thumb-active-name" style="font-size: 0.75rem; color: var(--color-text-muted); font-style: italic;">
+            Sillón Copacabana
+          </span>
+        </div>
+
+        <div class="thumbnails-rail" id="thumbnails-rail" role="region" aria-label="Galería y selector de piezas de la colección">
           <button 
             type="button" 
             class="thumb-btn active" 
+            data-product-id="copacabana"
             data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg"
-            data-alt="Toma principal frontal"
-            aria-label="Ver toma principal"
+            data-alt="Sillón Copacabana en Roble macizo"
+            title="Sillón Copacabana"
+            aria-label="Ver Sillón Copacabana"
           >
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg" alt="Miniatura 1">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg" alt="Sillón Copacabana">
           </button>
 
           <button 
             type="button" 
             class="thumb-btn" 
+            data-product-id="mendoza"
             data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzGNjpjivhg1Up1u081uMI-9DzvUZEFTbSJC9c_MEouL-Al-XyWFkVHjCUJTe-sZuRZdbfnOy5Kp_yRp0sPrWv-VzKxn9glZUVDgr48QRTvgRLCqdYMB9xSMNg7sagYnJdbpI3iTK3j1FNKfyzRrMBxm-gjlmeG1MJgu3akLB4MKgw13zvkaRNoI1QsEmzQCABwyFR5CSlV7fU3lewla1M3H80uCZrzme4cLendbBWIh2r_T_Uzx9rdsAYzpad56Tsg"
-            data-alt="Detalle Butaca complementaria"
-            aria-label="Ver pieza complementaria"
+            data-alt="Butaca Mendoza en Guatambú"
+            title="Butaca Mendoza"
+            aria-label="Ver Butaca Mendoza"
           >
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzGNjpjivhg1Up1u081uMI-9DzvUZEFTbSJC9c_MEouL-Al-XyWFkVHjCUJTe-sZuRZdbfnOy5Kp_yRp0sPrWv-VzKxn9glZUVDgr48QRTvgRLCqdYMB9xSMNg7sagYnJdbpI3iTK3j1FNKfyzRrMBxm-gjlmeG1MJgu3akLB4MKgw13zvkaRNoI1QsEmzQCABwyFR5CSlV7fU3lewla1M3H80uCZrzme4cLendbBWIh2r_T_Uzx9rdsAYzpad56Tsg" alt="Miniatura 2">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzGNjpjivhg1Up1u081uMI-9DzvUZEFTbSJC9c_MEouL-Al-XyWFkVHjCUJTe-sZuRZdbfnOy5Kp_yRp0sPrWv-VzKxn9glZUVDgr48QRTvgRLCqdYMB9xSMNg7sagYnJdbpI3iTK3j1FNKfyzRrMBxm-gjlmeG1MJgu3akLB4MKgw13zvkaRNoI1QsEmzQCABwyFR5CSlV7fU3lewla1M3H80uCZrzme4cLendbBWIh2r_T_Uzx9rdsAYzpad56Tsg" alt="Butaca Mendoza">
           </button>
 
           <button 
             type="button" 
             class="thumb-btn" 
+            data-product-id="araucaria"
             data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KPkT6MrXr5CuQ7JrTVhva7qBsz3YZipRM9g7ETgp7zEdsCO9j_luAFBg4BX5mMakgBU6pBOpM0zlzPBE_OLLE-nyEKaF8ZNf1aRaItAD-CHpEQXB1GnhH_wdNTkDT1qtq5CyJYrrcwnk1-7mWeb2EfOSOXzcPambplNoRtNif6Qbt8OcQFvyOIDkZhjh6kT-UjTFg2WnV47AhNwZLH3z7F9A2_kYCAV_uB5zMMYn6SPdcE_h_cFrworWjIhFvITS_w"
-            data-alt="Juego de sala Araucaria"
-            aria-label="Ver juego de sala"
+            data-alt="Mesa de Centro Araucaria"
+            title="Mesa de Centro Araucaria"
+            aria-label="Ver Mesa de Centro Araucaria"
           >
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KPkT6MrXr5CuQ7JrTVhva7qBsz3YZipRM9g7ETgp7zEdsCO9j_luAFBg4BX5mMakgBU6pBOpM0zlzPBE_OLLE-nyEKaF8ZNf1aRaItAD-CHpEQXB1GnhH_wdNTkDT1qtq5CyJYrrcwnk1-7mWeb2EfOSOXzcPambplNoRtNif6Qbt8OcQFvyOIDkZhjh6kT-UjTFg2WnV47AhNwZLH3z7F9A2_kYCAV_uB5zMMYn6SPdcE_h_cFrworWjIhFvITS_w" alt="Miniatura 3">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KPkT6MrXr5CuQ7JrTVhva7qBsz3YZipRM9g7ETgp7zEdsCO9j_luAFBg4BX5mMakgBU6pBOpM0zlzPBE_OLLE-nyEKaF8ZNf1aRaItAD-CHpEQXB1GnhH_wdNTkDT1qtq5CyJYrrcwnk1-7mWeb2EfOSOXzcPambplNoRtNif6Qbt8OcQFvyOIDkZhjh6kT-UjTFg2WnV47AhNwZLH3z7F9A2_kYCAV_uB5zMMYn6SPdcE_h_cFrworWjIhFvITS_w" alt="Mesa de Centro Araucaria">
           </button>
         </div>
 
         <!-- Tira de atributos del taller -->
         <div style="display: flex; justify-content: space-around; background-color: var(--color-alabastro); border: 1px solid var(--color-border-main); border-radius: var(--radius-sm); padding: 1rem; text-align: center;">
           <div>
-            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-siena); display: block;">Maderas Nobles</strong>
-            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">100% Petiribí y Roble FSC®</span>
+            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-siena); display: block;" id="attr-wood-title">Madera Noble</strong>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);" id="attr-wood-desc">100% Petiribí y Roble FSC®</span>
           </div>
           <div style="border-left: 1px solid var(--color-border-main); border-right: 1px solid var(--color-border-main); padding: 0 1rem;">
-            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-salvia-dark); display: block;">Curtido Vegetal</strong>
-            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">Sin cromo ni químicos nocivos</span>
+            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-salvia-dark); display: block;" id="attr-badge-title">Curtido Vegetal</strong>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);" id="attr-badge-desc">Sin cromo ni químicos nocivos</span>
           </div>
           <div>
-            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-siena); display: block;">10 Años Garantía</strong>
-            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">Estructura y ensamble</span>
+            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-siena); display: block;" id="attr-warranty-title">Garantía Taller</strong>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);" id="attr-warranty-desc">10 años estructural</span>
           </div>
         </div>
       </div>
@@ -185,15 +200,23 @@
           Pieza insignia de Hermanos Jota inspirada en la arquitectura carioca de los años 60. Cuero curtido vegetal que envejece con pátina noble y base de rotación 360° silenciosa.
         </p>
 
-        <!-- Acciones de Compra -->
+        <!-- Acciones de Compra y Favoritos -->
         <div style="display: flex; flex-direction: column; gap: 0.75rem;">
           <button type="button" class="btn-primary" id="btn-add-detail" style="width: 100%; padding: 1rem; font-size: 0.875rem;">
             <span class="material-symbols-outlined">add_shopping_cart</span>
             Añadir a la Bolsa de Compra
           </button>
-          <a href="contacto.html" class="btn-secondary" style="width: 100%; text-align: center;">
-            Consultar al Asesor de Taller
-          </a>
+          
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="button" class="btn-secondary" id="btn-fav-detail" style="flex: 1; justify-content: center; font-size: 0.8125rem;">
+              <span class="material-symbols-outlined" id="btn-fav-icon" style="font-size: 1.125rem;">favorite_border</span>
+              <span id="btn-fav-text">Guardar en Favoritos</span>
+            </button>
+            <a href="contacto.html" class="btn-secondary" style="flex: 1; text-align: center; justify-content: center; font-size: 0.8125rem;">
+              <span class="material-symbols-outlined" style="font-size: 1.125rem;">support_agent</span>
+              Consultar Asesor
+            </a>
+          </div>
         </div>
 
         <!-- Tabla de Dimensiones y Materiales con HTML Semántico -->
@@ -207,7 +230,7 @@
               </tr>
               <tr>
                 <th>Acabado Superficial</th>
-                <td>Aceites botánicos puros y cera de abejas virgen</td>
+                <td id="table-finish">Aceites botánicos puros y cera de abejas virgen</td>
               </tr>
               <tr>
                 <th>Medidas Estructurales</th>
@@ -224,6 +247,21 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </section>
+
+    <!-- Sección de Otras Piezas del Taller -->
+    <section class="container" style="padding-top: 2rem; padding-bottom: 4rem; border-top: 1px solid var(--color-border-main);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-siena); font-weight: 600;">Ebanistería de autor</span>
+          <h2 style="font-size: 1.75rem; margin-top: 0.25rem;">Otras Piezas del Taller</h2>
+        </div>
+        <a href="catalogo.html" class="btn-link">Ver catálogo completo <span class="material-symbols-outlined" style="font-size: 1.1rem;">arrow_forward</span></a>
+      </div>
+
+      <div class="catalog-grid" id="related-products-grid" style="padding: 0;">
+        <!-- Se inyecta dinámicamente con JS -->
       </div>
     </section>
   </main>
@@ -382,54 +420,284 @@
   <script src="js/carrito.js"></script>
   <script src="js/main.js"></script>
 
-  <!-- Script específico de la página de detalle para cargar dinámicamente si hay parámetro ?id= -->
+  <!-- Script interactivo específico de la página de detalle de producto -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const prodId = urlParams.get('id') || 'copacabana';
-      const producto = buscarProductoPorId(prodId);
+    let productoActual = null;
 
-      if (producto) {
-        document.title = `${producto.nombre} | Hermanos Jota Mueblería y Hogar`;
-        
-        const nameEl = document.getElementById('product-name');
-        const priceEl = document.getElementById('product-price');
-        const descEl = document.getElementById('product-description');
-        const matEl = document.getElementById('product-material');
-        const cuotasEl = document.getElementById('product-cuotas');
-        const mainImg = document.getElementById('main-product-img');
-        const breadcrumbCurrent = document.getElementById('breadcrumb-current');
-        const breadcrumbCat = document.getElementById('breadcrumb-category');
-        const tableWood = document.getElementById('table-wood');
-        const tableDimensions = document.getElementById('table-dimensions');
-        const tableWarranty = document.getElementById('table-warranty');
-        const tagEl = document.getElementById('product-tag');
+    /**
+     * Obtiene el listado de piezas a mostrar en el riel de colección.
+     * Prioriza la misma categoría y complementa hasta 4-5 piezas representativas.
+     */
+    function obtenerProductosCarril(prod) {
+      const mismaCategoria = PRODUCTOS.filter(p => p.categoria === prod.categoria);
+      let seleccion = [...mismaCategoria];
 
-        if (nameEl) nameEl.textContent = producto.nombre;
-        if (priceEl) priceEl.textContent = formatearPrecio(producto.precio);
-        if (descEl) descEl.textContent = producto.descripcion;
-        if (matEl) matEl.textContent = producto.materialDetalle || producto.maderaNombre;
-        if (cuotasEl) cuotasEl.innerHTML = `6 cuotas fijas sin interés de <strong style="color: var(--color-siena); font-weight: 600;">${formatearPrecio(producto.cuotaMonto)}</strong> con tarjetas bancarias`;
-        if (mainImg) {
-          mainImg.src = producto.imagen;
-          mainImg.alt = `${producto.nombre} en ${producto.maderaNombre}`;
-        }
-        if (breadcrumbCurrent) breadcrumbCurrent.textContent = producto.nombre;
-        if (breadcrumbCat) breadcrumbCat.innerHTML = `<a href="catalogo.html">${producto.categoria.toUpperCase()}</a>`;
-        if (tableWood) tableWood.textContent = producto.maderaNombre;
-        if (tableDimensions) tableDimensions.textContent = producto.medidas;
-        if (tableWarranty) tableWarranty.textContent = producto.garantia;
-        if (tagEl) tagEl.textContent = `${producto.subcategoria.toUpperCase()} • CATÁLOGO OFICIAL`;
-
-        // Botón de Añadir en la vista de detalle
-        const btnAdd = document.getElementById('btn-add-detail');
-        if (btnAdd) {
-          btnAdd.addEventListener('click', () => {
-            agregarAlCarrito(producto.id, 1);
-            setTimeout(abrirDrawerCarrito, 350);
-          });
+      // Si la categoría tiene menos de 4 muebles (ej: comedor), sumar otras piezas icónicas
+      if (seleccion.length < 4) {
+        const otros = PRODUCTOS.filter(p => p.categoria !== prod.categoria);
+        for (const item of otros) {
+          if (!seleccion.find(s => s.id === item.id)) {
+            seleccion.push(item);
+          }
+          if (seleccion.length >= 4) break;
         }
       }
+
+      // Limitar a 5 botones como máximo para mantener proporciones óptimas
+      if (seleccion.length > 5) {
+        if (!seleccion.slice(0, 5).find(s => s.id === prod.id)) {
+          seleccion = [prod, ...seleccion.filter(s => s.id !== prod.id).slice(0, 4)];
+        } else {
+          seleccion = seleccion.slice(0, 5);
+        }
+      }
+
+      return seleccion;
+    }
+
+    /**
+     * Sincroniza y renderiza los botones del riel de miniaturas
+     */
+    function sincronizarRielMiniaturas(prod) {
+      const rail = document.getElementById('thumbnails-rail');
+      if (!rail) return;
+
+      const productosCarril = obtenerProductosCarril(prod);
+      rail.innerHTML = '';
+
+      productosCarril.forEach(item => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `thumb-btn ${item.id === prod.id ? 'active' : ''}`;
+        btn.setAttribute('data-product-id', item.id);
+        btn.setAttribute('data-img', item.imagen);
+        btn.setAttribute('data-alt', `${item.nombre} en ${item.maderaNombre}`);
+        btn.setAttribute('title', item.nombre);
+        btn.setAttribute('aria-label', `Ver detalle de ${item.nombre}`);
+
+        btn.innerHTML = `<img src="${item.imagen}" alt="${item.nombre}">`;
+
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          cargarDetalleProducto(item.id);
+        });
+
+        rail.appendChild(btn);
+      });
+    }
+
+    /**
+     * Actualiza el estado visual del botón de favoritos
+     */
+    function actualizarBotonFavorito(id) {
+      const iconFav = document.getElementById('btn-fav-icon');
+      const textFav = document.getElementById('btn-fav-text');
+      if (!iconFav || !textFav) return;
+
+      const fav = typeof esFavorito === 'function' ? esFavorito(id) : false;
+      if (fav) {
+        iconFav.textContent = 'favorite';
+        iconFav.style.color = 'var(--color-siena)';
+        textFav.textContent = 'En tus Favoritos';
+      } else {
+        iconFav.textContent = 'favorite_border';
+        iconFav.style.color = '';
+        textFav.textContent = 'Guardar en Favoritos';
+      }
+    }
+
+    /**
+     * Renderiza una grilla con otras piezas sugeridas del taller al final de la página
+     */
+    function renderizarPiezasSugeridas(prodActual) {
+      const grid = document.getElementById('related-products-grid');
+      if (!grid) return;
+
+      const sugeridos = PRODUCTOS.filter(p => p.id !== prodActual.id).slice(0, 4);
+
+      grid.innerHTML = sugeridos.map(p => `
+        <article class="product-card">
+          <div class="product-card-media">
+            <img src="${p.imagen}" alt="${p.nombre}" class="product-card-img" loading="lazy">
+            <span class="product-badge badge-${p.badgeTipo}">${p.badge}</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-meta">
+              <span class="product-subcat">${p.subcategoria}</span>
+              <h3 class="product-title">${p.nombre}</h3>
+              <p class="product-desc">${p.descripcion}</p>
+            </div>
+            <div class="product-card-pricing">
+              <div class="price-block">
+                <span class="price-amount">${formatearPrecio(p.precio)}</span>
+                <span class="price-installments">${p.cuotas || 6} cuotas sin interés de <strong>${formatearPrecio(p.cuotaMonto)}</strong></span>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="btn-primary btn-add-cart" data-id="${p.id}">
+                  <span class="material-symbols-outlined">add_shopping_cart</span> Añadir
+                </button>
+                <a href="producto.html?id=${p.id}" class="btn-secondary">Detalle</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      // Conectar botones de añadir de las tarjetas sugeridas
+      grid.querySelectorAll('.btn-add-cart').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = btn.getAttribute('data-id');
+          if (typeof agregarAlCarrito === 'function') {
+            agregarAlCarrito(id, 1);
+            if (typeof abrirDrawerCarrito === 'function') {
+              setTimeout(abrirDrawerCarrito, 350);
+            }
+          }
+        });
+      });
+    }
+
+    /**
+     * Carga dinámicamente todo el detalle del producto seleccionado:
+     * Nombre, precio, cuotas, imagen con transición, descripción, material,
+     * ficha técnica, atributos de taller, riel de miniaturas y URL.
+     */
+    function cargarDetalleProducto(prodId) {
+      const producto = buscarProductoPorId(prodId) || PRODUCTOS[0];
+      if (!producto) return;
+
+      productoActual = producto;
+
+      // 1. Título y Navegación de Migas de Pan
+      document.title = `${producto.nombre} | Hermanos Jota Mueblería y Hogar`;
+
+      const breadcrumbCurrent = document.getElementById('breadcrumb-current');
+      const breadcrumbCat = document.getElementById('breadcrumb-category');
+      if (breadcrumbCurrent) breadcrumbCurrent.textContent = producto.nombre;
+      if (breadcrumbCat) {
+        breadcrumbCat.innerHTML = `<a href="catalogo.html?cat=${producto.categoria}">${producto.categoria.toUpperCase()}</a>`;
+      }
+
+      // 2. Transición Suave de la Fotografía Principal
+      const mainImg = document.getElementById('main-product-img');
+      if (mainImg) {
+        mainImg.style.opacity = '0.3';
+        setTimeout(() => {
+          mainImg.src = producto.imagen;
+          mainImg.alt = `${producto.nombre} en ${producto.maderaNombre}`;
+          mainImg.style.opacity = '1';
+        }, 150);
+      }
+
+      // 3. Textos, Precios y Badges
+      const nameEl = document.getElementById('product-name');
+      const priceEl = document.getElementById('product-price');
+      const descEl = document.getElementById('product-description');
+      const matEl = document.getElementById('product-material');
+      const cuotasEl = document.getElementById('product-cuotas');
+      const stockEl = document.getElementById('product-stock');
+      const tagEl = document.getElementById('product-tag');
+      const thumbActiveName = document.getElementById('thumb-active-name');
+
+      if (nameEl) nameEl.textContent = producto.nombre;
+      if (priceEl) priceEl.textContent = formatearPrecio(producto.precio);
+      if (descEl) descEl.textContent = producto.descripcion;
+      if (matEl) matEl.textContent = producto.materialDetalle || producto.maderaNombre;
+      if (cuotasEl) {
+        cuotasEl.innerHTML = `${producto.cuotas || 6} cuotas fijas sin interés de <strong style="color: var(--color-siena); font-weight: 600;">${formatearPrecio(producto.cuotaMonto)}</strong> con tarjetas bancarias`;
+      }
+      if (stockEl) {
+        stockEl.textContent = `Stock disponible (${producto.stock} un.)`;
+      }
+      if (tagEl) {
+        tagEl.textContent = `${producto.subcategoria.toUpperCase()} • CATÁLOGO OFICIAL`;
+      }
+      if (thumbActiveName) {
+        thumbActiveName.textContent = producto.nombre;
+      }
+
+      // 4. Ficha Técnica y Tabla de Dimensiones
+      const tableWood = document.getElementById('table-wood');
+      const tableDimensions = document.getElementById('table-dimensions');
+      const tableWarranty = document.getElementById('table-warranty');
+      if (tableWood) tableWood.textContent = producto.maderaNombre;
+      if (tableDimensions) tableDimensions.textContent = producto.medidas;
+      if (tableWarranty) tableWarranty.textContent = producto.garantia;
+
+      // 5. Tira de Atributos de Taller
+      const attrWoodDesc = document.getElementById('attr-wood-desc');
+      const attrBadgeTitle = document.getElementById('attr-badge-title');
+      const attrBadgeDesc = document.getElementById('attr-badge-desc');
+      const attrWarrantyTitle = document.getElementById('attr-warranty-title');
+      if (attrWoodDesc) attrWoodDesc.textContent = producto.maderaNombre;
+      if (attrBadgeTitle) attrBadgeTitle.textContent = producto.badge;
+      if (attrBadgeDesc) {
+        attrBadgeDesc.textContent = producto.materialDetalle 
+          ? (producto.materialDetalle.length > 34 ? producto.materialDetalle.substring(0, 32) + '...' : producto.materialDetalle)
+          : 'Selección de taller noble';
+      }
+      if (attrWarrantyTitle) attrWarrantyTitle.textContent = producto.garantia;
+
+      // 6. Sincronizar Riel y Botón de Favoritos
+      sincronizarRielMiniaturas(producto);
+      actualizarBotonFavorito(producto.id);
+
+      // 7. Actualizar Piezas Sugeridas
+      renderizarPiezasSugeridas(producto);
+
+      // 8. Actualizar URL en historial sin recargar
+      try {
+        const url = new URL(window.location.href);
+        if (url.searchParams.get('id') !== producto.id) {
+          url.searchParams.set('id', producto.id);
+          window.history.replaceState({ id: producto.id }, '', url.toString());
+        }
+      } catch (e) {
+        console.warn('History replaceState error:', e);
+      }
+    }
+
+    // Exponer globalmente para main.js u otros módulos
+    window.cargarDetalleProducto = cargarDetalleProducto;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Obtener producto por URL (?id=...) o por defecto 'copacabana'
+      const urlParams = new URLSearchParams(window.location.search);
+      const prodId = urlParams.get('id') || 'copacabana';
+
+      cargarDetalleProducto(prodId);
+
+      // 2. Acción: Añadir a la Bolsa de Compra
+      const btnAdd = document.getElementById('btn-add-detail');
+      if (btnAdd) {
+        btnAdd.addEventListener('click', () => {
+          if (productoActual && typeof agregarAlCarrito === 'function') {
+            agregarAlCarrito(productoActual.id, 1);
+            if (typeof abrirDrawerCarrito === 'function') {
+              setTimeout(abrirDrawerCarrito, 350);
+            }
+          }
+        });
+      }
+
+      // 3. Acción: Alternar Favoritos
+      const btnFav = document.getElementById('btn-fav-detail');
+      if (btnFav) {
+        btnFav.addEventListener('click', () => {
+          if (productoActual && typeof alternarFavorito === 'function') {
+            alternarFavorito(productoActual.id);
+            actualizarBotonFavorito(productoActual.id);
+          }
+        });
+      }
+
+      // 4. Sincronización con el botón Atrás / Adelante del Navegador
+      window.addEventListener('popstate', () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id') || 'copacabana';
+        cargarDetalleProducto(id);
+      });
     });
   </script>
 </body>

@@ -41,7 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mainProductImg && thumbBtns.length > 0) {
     thumbBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Remover clase activa de todas las miniaturas
+        const prodId = btn.getAttribute('data-product-id');
+        if (prodId && typeof window.cargarDetalleProducto === 'function') {
+          window.cargarDetalleProducto(prodId);
+          return;
+        }
+
+        // Fallback para miniaturas de fotografías simples sin ID de producto
         thumbBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
