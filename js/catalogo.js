@@ -66,8 +66,8 @@ function crearTarjetaProducto(producto) {
         loading="lazy"
       >
       <span class="product-badge ${badgeClase}">${producto.badge}</span>
-      <button class="btn-wishlist" type="button" aria-label="Guardar ${producto.nombre} en favoritos" data-id="${producto.id}">
-        <span class="material-symbols-outlined">favorite</span>
+      <button class="btn-wishlist ${(typeof esFavorito === 'function' && esFavorito(producto.id)) ? 'active' : ''}" type="button" aria-label="Guardar ${producto.nombre} en favoritos" data-id="${producto.id}">
+        <span class="material-symbols-outlined" style="${(typeof esFavorito === 'function' && esFavorito(producto.id)) ? "font-variation-settings: 'FILL' 1;" : "font-variation-settings: 'FILL' 0;"}">favorite</span>
       </button>
     </div>
     
@@ -120,13 +120,16 @@ function crearTarjetaProducto(producto) {
   if (wishlistBtn) {
     wishlistBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      wishlistBtn.classList.toggle('active');
-      const icono = wishlistBtn.querySelector('.material-symbols-outlined');
-      if (wishlistBtn.classList.contains('active')) {
-        icono.style.fontVariationSettings = "'FILL' 1";
-        mostrarToast('FAVORITOS', `${producto.nombre} se guardó en tu lista de deseos.`);
-      } else {
-        icono.style.fontVariationSettings = "'FILL' 0";
+      if (typeof alternarFavorito === 'function') {
+        const agregado = alternarFavorito(producto.id);
+        const icono = wishlistBtn.querySelector('.material-symbols-outlined');
+        if (agregado) {
+          wishlistBtn.classList.add('active');
+          if (icono) icono.style.fontVariationSettings = "'FILL' 1";
+        } else {
+          wishlistBtn.classList.remove('active');
+          if (icono) icono.style.fontVariationSettings = "'FILL' 0";
+        }
       }
     });
   }

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cuenta & Pedidos de Taller | Hermanos Jota</title>
+  
+  <!-- Tipografías Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Iconografía Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos Externa CSS3 -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="account-page-body">
+
+  <!-- Barra de Anuncios Superior -->
+  <div class="announcement-bar">
+    <span class="material-symbols-outlined">eco</span>
+    <p>Sesión activa de taller • Programa Herencia Viva • Hasta 12 cuotas sin interés en piezas de catálogo</p>
+  </div>
+
+  <!-- Encabezado Semántico -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-link" aria-label="Hermanos Jota - Inicio">
+        <img src="assets/logo.jpg" alt="Logotipo Hermanos Jota" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Hermanos Jota</span>
+          <span class="brand-tagline">Mueblería y Hogar</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalogo.html" class="nav-link">Catálogo Oficial</a>
+        <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto & Citas</a>
+      </nav>
+
+      <!-- Acciones de Cabecera -->
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="search" placeholder="Buscar piezas o maderas..." aria-label="Buscar productos">
+        </div>
+
+        <button type="button" class="btn-header-action btn-open-cart" aria-label="Abrir Carrito de compras">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count-badge badge-hidden">0</span>
+        </button>
+
+        <a href="cuenta.html" class="btn-header-action active" aria-label="Mi Cuenta / Pedidos y Favoritos" title="Mi Cuenta (Sesión iniciada)">
+          <span class="material-symbols-outlined">person</span>
+        </a>
+
+        <button type="button" class="btn-mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo Oficial</a>
+      <a href="nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto & Citas</a>
+      <a href="cuenta.html" class="active">Mi Cuenta (Pedidos & Favoritos)</a>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container account-main-wrap">
+    
+    <!-- Tarjeta de Perfil de Usuario Simulado -->
+    <section class="account-profile-card">
+      <div class="profile-info-group">
+        <div class="profile-avatar">
+          <span>MG</span>
+        </div>
+        <div>
+          <div class="profile-badge-line">
+            <span class="product-badge badge-oro">PROGRAMA HERENCIA VIVA</span>
+            <span class="profile-verified">
+              <span class="material-symbols-outlined text-salvia" style="font-size: 16px;">verified</span>
+              <span>Identidad Verificada</span>
+            </span>
+          </div>
+          <h1 class="profile-name">Martina González Alsina</h1>
+          <p class="profile-email">martina.alsina@arquitectura.com.ar • DNI: 27-38491024-4</p>
+        </div>
+      </div>
+
+      <div class="profile-stats-grid">
+        <div class="profile-stat-box">
+          <span class="stat-num" id="stat-orders-count">1</span>
+          <span class="stat-lbl">Órdenes Realizadas</span>
+        </div>
+        <div class="profile-stat-box">
+          <span class="stat-num text-siena" id="stat-favs-count">2</span>
+          <span class="stat-lbl">Piezas en Favoritos</span>
+        </div>
+        <div class="profile-stat-box">
+          <span class="stat-num text-salvia">10 Años</span>
+          <span class="stat-lbl">Garantía Activa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selector de Pestañas de Cuenta -->
+    <div class="account-tabs-bar">
+      <button type="button" class="account-tab-btn active" id="tab-orders-btn" onclick="cambiarPestanaCuenta('orders')">
+        <span class="material-symbols-outlined">receipt_long</span>
+        <span>Mis Órdenes de Compra (<span id="tab-orders-badge">1</span>)</span>
+      </button>
+      <button type="button" class="account-tab-btn" id="tab-favorites-btn" onclick="cambiarPestanaCuenta('favorites')">
+        <span class="material-symbols-outlined">favorite</span>
+        <span>Piezas Favoritas (<span id="tab-favorites-badge">2</span>)</span>
+      </button>
+    </div>
+
+    <!-- PESTAÑA 1: ÓRDENES DE COMPRA -->
+    <section id="orders-section" class="account-section-pane" style="display: block;">
+      <div class="section-pane-header">
+        <div>
+          <h2 class="section-pane-title">Historial de Órdenes en Taller</h2>
+          <p class="section-pane-desc">Seguimiento de producción artesanal, despacho y comprobantes oficiales.</p>
+        </div>
+        <a href="checkout.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem;">
+          <span class="material-symbols-outlined">shopping_cart_checkout</span>
+          <span>Ir al Checkout</span>
+        </a>
+      </div>
+
+      <div id="orders-list-container" class="orders-cards-list">
+        <!-- Inyectado dinámicamente con JS -->
+      </div>
+    </section>
+
+    <!-- PESTAÑA 2: PIEZAS FAVORITAS (WISHLIST) -->
+    <section id="favorites-section" class="account-section-pane" style="display: none;">
+      <div class="section-pane-header">
+        <div>
+          <h2 class="section-pane-title">Piezas Guardadas en Favoritos</h2>
+          <p class="section-pane-desc">Tu colección personal de muebles mid-century y maderas nobles seleccionadas.</p>
+        </div>
+        <a href="catalogo.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem;">
+          <span class="material-symbols-outlined">menu_book</span>
+          <span>Explorar Más en Catálogo</span>
+        </a>
+      </div>
+
+      <div id="favorites-grid-container" class="favorites-grid">
+        <!-- Inyectado dinámicamente con JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Panel Deslizante del Carrito -->
+  <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-drawer-heading" role="dialog" aria-modal="true">
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+      <div class="cart-header">
+        <div class="cart-header-title-wrap">
+          <span class="material-symbols-outlined text-siena">shopping_bag</span>
+          <h3 id="cart-drawer-heading" class="cart-title">Bolsa de Compra</h3>
+          <span class="cart-badge-count" id="drawer-count">0 piezas</span>
+        </div>
+        <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar bolsa de compra">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-list"></div>
+
+      <div class="cart-footer" id="cart-drawer-footer">
+        <div class="cart-summary-line">
+          <span>Subtotal de piezas</span>
+          <span id="cart-subtotal-val">$0 ARS</span>
+        </div>
+        <div class="cart-summary-line" style="color: var(--color-salvia-dark);">
+          <span>Descuento 15% por transferencia</span>
+          <span id="cart-discount-val">-$0 ARS</span>
+        </div>
+        <div class="cart-total-line">
+          <span class="cart-total-label">Total Estimado</span>
+          <span class="cart-total-price" id="cart-total-val">$0 ARS</span>
+        </div>
+        <p class="cart-cuotas-note" id="cart-cuotas-text">
+          Hasta 6 cuotas fijas sin interés en maderas macizas
+        </p>
+        <a href="checkout.html" class="btn-primary" style="width: 100%; text-align: center;">
+          Finalizar Pedido / Checkout
+        </a>
+        <button type="button" class="btn-link" id="clear-cart-btn" style="justify-content: center; font-size: 0.75rem; color: var(--color-text-muted);">
+          Vaciar selección
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Notificación Toast Emergente -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
+    <span class="material-symbols-outlined toast-icon">check_circle</span>
+    <div>
+      <p class="toast-title" id="toast-title">Acción realizada</p>
+      <p class="toast-subtitle" id="toast-subtitle">Se actualizó tu perfil</p>
+    </div>
+  </div>
+
+  <!-- Pie de Página Oficial (Réplica Exacta) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Columna 1: Marca & Origen -->
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand-header">
+          <img src="assets/logo.jpg" alt="Logo Hermanos Jota" class="footer-logo-img">
+          <div class="footer-brand-title">
+            <span>HERMANOS</span>
+            <span>JOTA</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Ebanistería contemporánea y preservación del oficio maderero. Diseñamos piezas escultóricas creadas a mano con maderas nobles certificadas y herrajes macizos que envejecen con dignidad.
+        </p>
+        <div class="footer-workshop-badge">
+          <span class="material-symbols-outlined">verified</span>
+          <span>TALLER ARTESANAL EN BUENOS AIRES</span>
+        </div>
+      </div>
+
+      <!-- Columna 2: Información Útil -->
+      <div class="footer-col footer-info-col">
+        <h4 class="footer-col-title">INFORMACIÓN ÚTIL</h4>
+        <div class="footer-info-list">
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Av. San Juan 2847 - Barrio de San Cristóbal, CABA, Argentina</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <div>
+              <div>Lunes a viernes: 10:00 a 19:00 hs</div>
+              <div>Sábados de 10:00 a 14:00</div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:+541145678900">+54 11 4567-8900</a>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">mail</span>
+            <div>
+              <div><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></div>
+              <div><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">photo_camera</span>
+            <span>Instagram: @hermanosjota_ba</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3: Navegación -->
+      <div class="footer-col footer-nav-col">
+        <h4 class="footer-col-title">NAVEGACIÓN</h4>
+        <nav class="footer-links" aria-label="Enlaces rápidos del pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html">Catálogo Completo</a>
+          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto & Citas</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4: Boletín de Taller -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-col-title">BOLETÍN DE TALLER</h4>
+        <p class="footer-newsletter-text">
+          Novedades de nuevas series, aperturas de hornadas y procesos de ebanistería.
+        </p>
+        <form id="footer-newsletter-form" class="footer-newsletter-form">
+          <input 
+            type="email" 
+            class="footer-newsletter-input" 
+            placeholder="Tu correo electrónico" 
+            required 
+            aria-label="Tu correo electrónico"
+          >
+          <button type="submit" class="footer-newsletter-btn">SUSCRIBIRME</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Derechos y Métodos de Pago -->
+    <div class="container footer-bottom-bar">
+      <p class="footer-copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+      <div class="footer-payments" aria-label="Medios de pago aceptados">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">MERCADO PAGO</span>
+        <span class="payment-chip payment-chip-highlight">TRANSFERENCIA (-15%)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Modulares -->
+  <script src="js/productos.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Lógica de Cuenta y Renderizado Dinámico -->
+  <script>
+    const ORDENES_STORAGE_KEY = 'hj_ordenes_v1';
+
+    function obtenerOrdenes() {
+      try {
+        const raw = localStorage.getItem(ORDENES_STORAGE_KEY);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {
+        console.warn('Error leyendo órdenes:', e);
+      }
+
+      // Orden inicial de muestra auténtica (como en la maqueta)
+      const ordenInicial = [
+        {
+          id: '#HJ-8429',
+          fecha: '15 de Febrero, 2025',
+          cliente: 'Martina González Alsina',
+          direccion: 'Av. Montes de Oca 1240, Piso 4to B, CABA',
+          metodoEnvio: 'Flete Especial Guante Blanco (Bonificado)',
+          metodoPago: 'Transferencia Bancaria Directa (-15% Aplicado)',
+          piezas: [
+            { nombre: 'Sillón Copacabana', cantidad: 1, precio: 620000 },
+            { nombre: 'Aparador Uspallata', cantidad: 1, precio: 490000 }
+          ],
+          total: '$849.150 ARS',
+          estado: 'En Producción en Taller'
+        }
+      ];
+
+      try {
+        localStorage.setItem(ORDENES_STORAGE_KEY, JSON.stringify(ordenInicial));
+      } catch (e) {}
+
+      return ordenInicial;
+    }
+
+    function renderizarOrdenes() {
+      const container = document.getElementById('orders-list-container');
+      const badge = document.getElementById('tab-orders-badge');
+      const statOrders = document.getElementById('stat-orders-count');
+      if (!container) return;
+
+      const ordenes = obtenerOrdenes();
+      if (badge) badge.textContent = ordenes.length;
+      if (statOrders) statOrders.textContent = ordenes.length;
+
+      if (ordenes.length === 0) {
+        container.innerHTML = `
+          <div class="cart-empty-state">
+            <span class="material-symbols-outlined empty-icon">receipt_long</span>
+            <h4 class="empty-title">Aún no has generado órdenes</h4>
+            <p class="empty-desc">Tus solicitudes de confección artesanal aparecerán aquí con su seguimiento en tiempo real.</p>
+            <a href="catalogo.html" class="btn-primary" style="margin-top: 1rem;">Explorar Catálogo</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = '';
+      const fragment = document.createDocumentFragment();
+
+      ordenes.forEach(ord => {
+        const card = document.createElement('article');
+        card.className = 'order-card';
+
+        const piezasHtml = (ord.piezas || []).map(p => `
+          <li class="order-piece-item">
+            <span><strong>${p.cantidad}x</strong> ${p.nombre}</span>
+            <span>${formatearPrecio(p.precio * p.cantidad)}</span>
+          </li>
+        `).join('');
+
+        card.innerHTML = `
+          <div class="order-card-header">
+            <div>
+              <div class="order-number-row">
+                <h3 class="order-number-title">${ord.id}</h3>
+                <span class="product-badge badge-salvia">${ord.estado}</span>
+              </div>
+              <span class="order-date">Registrada el ${ord.fecha}</span>
+            </div>
+            <div class="order-total-block">
+              <span class="order-total-label">Inversión Total</span>
+              <span class="order-total-val">${ord.total}</span>
+            </div>
+          </div>
+
+          <div class="order-card-body">
+            <div class="order-details-grid">
+              <div>
+                <strong class="order-subheading">Modalidad de Despacho:</strong>
+                <p class="order-text">${ord.metodoEnvio}</p>
+                <p class="order-text-muted">${ord.direccion}</p>
+              </div>
+              <div>
+                <strong class="order-subheading">Forma de Pago:</strong>
+                <p class="order-text text-salvia font-medium">${ord.metodoPago}</p>
+                <p class="order-text-muted">Titular: ${ord.cliente}</p>
+              </div>
+            </div>
+
+            <div class="order-pieces-box">
+              <strong class="order-subheading">Detalle de Piezas en Producción:</strong>
+              <ul class="order-pieces-list">
+                ${piezasHtml}
+                <li class="order-piece-item text-salvia font-medium">
+                  <span>1x Almohadón Lino Escandinavo</span>
+                  <span>Cortesía de Taller ($0)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="order-card-footer">
+            <div class="order-timeline-hint">
+              <span class="material-symbols-outlined text-siena">handyman</span>
+              <span>Tiempo estimado de secado y ensamblado: 10 a 14 días hábiles</span>
+            </div>
+            <button type="button" class="btn-secondary" onclick="window.print()" style="font-size: 0.75rem; padding: 0.45rem 0.85rem;">
+              <span class="material-symbols-outlined" style="font-size: 1rem;">print</span>
+              <span>Comprobante</span>
+            </button>
+          </div>
+        `;
+
+        fragment.appendChild(card);
+      });
+
+      container.appendChild(fragment);
+    }
+
+    function renderizarGrillaFavoritos() {
+      const container = document.getElementById('favorites-grid-container');
+      const badge = document.getElementById('tab-favorites-badge');
+      const statFavs = document.getElementById('stat-favs-count');
+      if (!container) return;
+
+      const favIds = obtenerFavoritos();
+      if (badge) badge.textContent = favIds.length;
+      if (statFavs) statFavs.textContent = favIds.length;
+
+      if (favIds.length === 0) {
+        container.innerHTML = `
+          <div class="cart-empty-state" style="grid-column: 1 / -1;">
+            <span class="material-symbols-outlined empty-icon" style="color: var(--color-siena);">favorite_border</span>
+            <h4 class="empty-title">No tienes piezas en favoritos</h4>
+            <p class="empty-desc">Presiona el corazón en cualquier producto del catálogo para guardarlo en tu selección personal.</p>
+            <a href="catalogo.html" class="btn-primary" style="margin-top: 1rem;">Explorar Colecciones</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = '';
+      const fragment = document.createDocumentFragment();
+
+      favIds.forEach(id => {
+        const prod = buscarProductoPorId(id);
+        if (!prod) return;
+
+        const card = document.createElement('article');
+        card.className = 'favorite-item-card';
+
+        card.innerHTML = `
+          <div class="fav-card-img-wrap">
+            <img src="${prod.imagen}" alt="${prod.nombre}" class="fav-card-img">
+            <button type="button" class="fav-remove-btn" onclick="alternarFavorito('${prod.id}')" title="Quitar de favoritos">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            </button>
+          </div>
+          <div class="fav-card-body">
+            <span class="fav-card-subcat">${prod.subcategoria.toUpperCase()}</span>
+            <h3 class="fav-card-title">${prod.nombre}</h3>
+            <p class="fav-card-material">${prod.maderaNombre}</p>
+            
+            <div class="fav-card-price-row">
+              <span class="fav-card-price">${formatearPrecio(prod.precio)}</span>
+              <span class="fav-card-cuotas">6 cuotas de ${formatearPrecio(prod.cuotaMonto)}</span>
+            </div>
+
+            <div class="fav-card-actions">
+              <button type="button" class="btn-primary btn-add-fav" onclick="agregarAlCarrito('${prod.id}', 1); setTimeout(abrirDrawerCarrito, 350);" style="flex: 1; justify-content: center; font-size: 0.8125rem;">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+                <span>Añadir a Bolsa</span>
+              </button>
+              <a href="producto.html?id=${prod.id}" class="btn-secondary" style="padding: 0.5rem 0.75rem; justify-content: center;" title="Ver ficha técnica">
+                <span class="material-symbols-outlined">visibility</span>
+              </a>
+            </div>
+          </div>
+        `;
+
+        fragment.appendChild(card);
+      });
+
+      container.appendChild(fragment);
+    }
+
+    function cambiarPestanaCuenta(target) {
+      const ordersPane = document.getElementById('orders-section');
+      const favsPane = document.getElementById('favorites-section');
+      const ordersBtn = document.getElementById('tab-orders-btn');
+      const favsBtn = document.getElementById('tab-favorites-btn');
+
+      if (target === 'orders') {
+        if (ordersPane) ordersPane.style.display = 'block';
+        if (favsPane) favsPane.style.display = 'none';
+        if (ordersBtn) ordersBtn.classList.add('active');
+        if (favsBtn) favsBtn.classList.remove('active');
+      } else {
+        if (ordersPane) ordersPane.style.display = 'none';
+        if (favsPane) favsPane.style.display = 'block';
+        if (ordersBtn) ordersBtn.classList.remove('active');
+        if (favsBtn) favsBtn.classList.add('active');
+        renderizarGrillaFavoritos();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderizarOrdenes();
+      renderizarGrillaFavoritos();
+    });
+  </script>
+</body>
+</html>

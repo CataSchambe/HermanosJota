@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout & Detalle de Compra | Hermanos Jota</title>
+  
+  <!-- Tipografías Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Iconografía Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos Externa CSS3 -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="checkout-page-body">
+
+  <!-- Barra de Anuncios Superior -->
+  <div class="announcement-bar">
+    <span class="material-symbols-outlined">eco</span>
+    <p>Envíos cuidados a todo el país • Hasta 12 cuotas sin interés en piezas de catálogo • Showroom San Cristóbal · Defensa 1042</p>
+  </div>
+
+  <!-- Encabezado Semántico -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-link" aria-label="Hermanos Jota - Inicio">
+        <img src="assets/logo.jpg" alt="Logotipo Hermanos Jota" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Hermanos Jota</span>
+          <span class="brand-tagline">Mueblería y Hogar</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalogo.html" class="nav-link">Catálogo Oficial</a>
+        <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto & Citas</a>
+      </nav>
+
+      <!-- Acciones de Cabecera -->
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="search" placeholder="Buscar piezas o maderas..." aria-label="Buscar productos">
+        </div>
+
+        <button type="button" class="btn-header-action btn-open-cart" aria-label="Abrir Carrito de compras">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count-badge badge-hidden">0</span>
+        </button>
+
+        <a href="cuenta.html" class="btn-header-action active" aria-label="Mi Cuenta / Pedidos y Favoritos" title="Mi Cuenta (Simulación de usuario)">
+          <span class="material-symbols-outlined">person</span>
+        </a>
+
+        <button type="button" class="btn-mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo Oficial</a>
+      <a href="nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto & Citas</a>
+      <a href="cuenta.html">Mi Cuenta (Pedidos & Favoritos)</a>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal de Checkout -->
+  <main class="checkout-main-wrap">
+    
+    <!-- Stepper de Progreso Superior -->
+    <section class="checkout-stepper-bar">
+      <div class="container stepper-inner">
+        <div class="stepper-steps">
+          <div class="step-item step-completed">
+            <span class="step-number">01</span>
+            <span class="step-text">Carrito & Selección</span>
+          </div>
+          <span class="material-symbols-outlined step-divider">chevron_right</span>
+          <div class="step-item step-current">
+            <span class="step-number">02</span>
+            <span class="step-text">Checkout Guiado</span>
+          </div>
+          <span class="material-symbols-outlined step-divider">chevron_right</span>
+          <div class="step-item step-pending">
+            <span class="step-number">03</span>
+            <span class="step-text">Confirmación de Orden</span>
+          </div>
+        </div>
+        <div class="stepper-protection">
+          <span class="material-symbols-outlined">verified_user</span>
+          <span>Compra Protegida • Garantía Estructural de 10 Años</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenedor Principal en Doble Columna -->
+    <section class="container checkout-layout-stage">
+      
+      <!-- Selector de Vista (Pestañas Interactivas) -->
+      <div class="checkout-view-header">
+        <div>
+          <span class="checkout-pretitle">TALLER DE EBANISTERÍA & GUARDA</span>
+          <h1 class="checkout-main-title">DETALLE DE TU COMPRA</h1>
+        </div>
+        <div class="checkout-view-tabs">
+          <button type="button" class="view-tab-btn" id="tab-cart-btn" onclick="cambiarVistaCheckout('cart')">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span>1. Revisar Carrito <span class="tab-cart-count">(2)</span></span>
+          </button>
+          <button type="button" class="view-tab-btn active" id="tab-checkout-btn" onclick="cambiarVistaCheckout('checkout')">
+            <span class="material-symbols-outlined">local_shipping</span>
+            <span>2. Checkout & Pago</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="checkout-grid-wrap">
+        
+        <!-- COLUMNA IZQUIERDA: PANELES DE CARRITO Y CHECKOUT -->
+        <div class="checkout-left-col">
+          
+          <!-- ================= PANEL 1: CARRITO DE COMPRAS ================= -->
+          <div class="checkout-panel-block" id="cart-panel" style="display: none;">
+            <div class="panel-card">
+              <div class="panel-card-header">
+                <span class="panel-card-title">Piezas Seleccionadas en Catálogo</span>
+                <span class="panel-card-tag">Entrega Programada San Cristóbal • CABA</span>
+              </div>
+
+              <!-- Contenedor dinámico de ítems -->
+              <div id="cart-items-container" class="checkout-items-list">
+                <!-- Se inyecta dinámicamente con JS -->
+              </div>
+            </div>
+
+            <!-- Cupón de Descuento y Compromiso -->
+            <div class="checkout-benefits-row">
+              <div class="coupon-box-card">
+                <div>
+                  <span class="coupon-label">
+                    <span class="material-symbols-outlined">sell</span>
+                    <span>Cupón Promocional de Ebanistería</span>
+                  </span>
+                  <p class="coupon-desc">Ingresá <strong>TALLER10</strong> para un 10% adicional en compras combinadas.</p>
+                </div>
+                <div class="coupon-input-group">
+                  <input type="text" id="coupon-input" value="TALLER10" placeholder="Ej: TALLER10" aria-label="Código de cupón">
+                  <button type="button" class="btn-primary" onclick="aplicarCupon()">Aplicar</button>
+                </div>
+                <p id="coupon-status" class="coupon-status success">
+                  <span class="material-symbols-outlined" style="font-size: 14px;">check_circle</span>
+                  <span>Cupón TALLER10 verificado (-10% en total de piezas).</span>
+                </p>
+              </div>
+
+              <div class="craft-commitment-card">
+                <div class="craft-commitment-icon">
+                  <span class="material-symbols-outlined">handshake</span>
+                </div>
+                <div>
+                  <h4 class="craft-commitment-title">Compromiso Hermanos Jota</h4>
+                  <p class="craft-commitment-desc">Cada encargo es registrado en nuestro libro de taller con número de serie pirograbado en la madera para trazabilidad vitalicia.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 2: CHECKOUT GUIADO ================= -->
+          <div class="checkout-panel-block" id="checkout-panel" style="display: flex;">
+            
+            <!-- Paso 1: Datos Personales y Facturación -->
+            <div class="panel-card">
+              <div class="step-card-header">
+                <span class="step-circle-badge">1</span>
+                <div>
+                  <h3 class="step-title">Datos de Contacto & Facturación</h3>
+                  <p class="step-desc">Emitimos Factura A o B legal con certificación de taller</p>
+                </div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label for="input-name">Nombre Completo *</label>
+                  <input type="text" id="input-name" value="Martina González Alsina" required>
+                </div>
+                <div class="form-field">
+                  <label for="input-dni">DNI / CUIT (Para certificado de pieza) *</label>
+                  <input type="text" id="input-dni" value="27-38491024-4" required>
+                </div>
+                <div class="form-field">
+                  <label for="input-email">Correo Electrónico *</label>
+                  <input type="email" id="input-email" value="martina.alsina@arquitectura.com.ar" required>
+                </div>
+                <div class="form-field">
+                  <label for="input-phone">Teléfono Móvil (Avisos de Flete) *</label>
+                  <input type="tel" id="input-phone" value="+54 9 11 5823-9012" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 2: Método de Envío y Dirección -->
+            <div class="panel-card">
+              <div class="step-card-header">
+                <span class="step-circle-badge">2</span>
+                <div>
+                  <h3 class="step-title">Modalidad de Despacho</h3>
+                  <p class="step-desc">Seleccioná cómo querés recibir tus piezas de ebanistería</p>
+                </div>
+              </div>
+              <div class="delivery-options-wrap">
+                <label class="delivery-radio-card" onclick="seleccionarDespacho('flete')">
+                  <input type="radio" name="delivery-method" value="flete" checked class="custom-radio">
+                  <div class="delivery-card-content">
+                    <div class="delivery-card-top">
+                      <span class="delivery-title">Flete Especial Guante Blanco (Recomendado)</span>
+                      <span class="product-badge badge-salvia">Bonificado $0</span>
+                    </div>
+                    <p class="delivery-desc">
+                      Personal propio de Hermanos Jota. Incluye desembalaje cuidadoso, posicionamiento milimétrico en ambiente y montaje completo en planta baja o por ascensor.
+                    </p>
+                  </div>
+                </label>
+
+                <label class="delivery-radio-card" onclick="seleccionarDespacho('showroom')">
+                  <input type="radio" name="delivery-method" value="showroom" class="custom-radio">
+                  <div class="delivery-card-content">
+                    <div class="delivery-card-top">
+                      <span class="delivery-title">Retiro en Taller & Showroom San Cristóbal</span>
+                      <span class="delivery-free-tag">Gratis</span>
+                    </div>
+                    <p class="delivery-desc">
+                      Av. San Juan 2847, Barrio San Cristóbal, CABA. Embalaje especial antichoque listo para carga en vehículo utilitario o camioneta.
+                    </p>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Bloque de Domicilio -->
+              <div class="address-details-box" id="address-block">
+                <span class="address-box-heading">Dirección de Entrega en CABA / GBA</span>
+                <div class="address-form-grid">
+                  <div class="form-field grid-span-2">
+                    <label for="input-address">Calle y Altura / Piso / Depto</label>
+                    <input type="text" id="input-address" value="Av. Montes de Oca 1240, Piso 4to B">
+                  </div>
+                  <div class="form-field">
+                    <label for="input-zip">Código Postal</label>
+                    <input type="text" id="input-zip" value="C1271AAX">
+                  </div>
+                  <div class="form-field grid-span-2">
+                    <label for="input-city">Barrio / Localidad</label>
+                    <input type="text" id="input-city" value="Barracas, Ciudad Autónoma de Buenos Aires">
+                  </div>
+                  <div class="form-field">
+                    <label for="input-floor">Piso por Escalera / Ascensor</label>
+                    <select id="input-floor" class="form-select">
+                      <option>Ascensor amplio (Medidas estándar)</option>
+                      <option>Planta Baja directa</option>
+                      <option>Escalera (Avisar a flete)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 3: Métodos de Pago Simulados -->
+            <div class="panel-card">
+              <div class="step-card-header">
+                <span class="step-circle-badge">3</span>
+                <div>
+                  <h3 class="step-title">Selección de Medio de Pago</h3>
+                  <p class="step-desc">Elegí tu método preferido de liquidación</p>
+                </div>
+              </div>
+              
+              <div class="payment-methods-grid">
+                <!-- Opción Transferencia -->
+                <div class="payment-method-card selected" id="pay-opt-transfer" onclick="seleccionarPago('transfer')">
+                  <div class="payment-method-top">
+                    <span class="material-symbols-outlined text-salvia">account_balance</span>
+                    <span class="product-badge badge-salvia font-bold">-15% OFF</span>
+                  </div>
+                  <h4 class="payment-method-name">Transferencia</h4>
+                  <p class="payment-method-desc">Acreditación bancaria directa con descuento máximo de taller.</p>
+                </div>
+
+                <!-- Opción Tarjeta -->
+                <div class="payment-method-card" id="pay-opt-card" onclick="seleccionarPago('card')">
+                  <div class="payment-method-top">
+                    <span class="material-symbols-outlined text-siena">credit_card</span>
+                    <span class="payment-chip-highlight">6 CUOTAS</span>
+                  </div>
+                  <h4 class="payment-method-name">Crédito Taller</h4>
+                  <p class="payment-method-desc">Hasta 6 cuotas fijas sin recargo con todas las entidades bancarias.</p>
+                </div>
+
+                <!-- Opción Mercado Pago -->
+                <div class="payment-method-card" id="pay-opt-mp" onclick="seleccionarPago('mp')">
+                  <div class="payment-method-top">
+                    <span class="material-symbols-outlined text-oro">payments</span>
+                    <span class="product-badge badge-oro font-bold">INMEDIATO</span>
+                  </div>
+                  <h4 class="payment-method-name">Mercado Pago</h4>
+                  <p class="payment-method-desc">Dinero en cuenta, tarjetas de débito y checkout transparente.</p>
+                </div>
+              </div>
+
+              <!-- Caja dinámica de detalles del método de pago -->
+              <div class="payment-info-box" id="payment-details-box">
+                <!-- Se inyecta dinámicamente -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: RESUMEN DE INVERSIÓN FLOTANTE (STICKY) -->
+        <aside class="checkout-right-col">
+          <div class="summary-floating-card">
+            <div class="summary-card-header">
+              <h3 class="summary-title">Resumen de Inversión</h3>
+              <span class="product-badge badge-siena">Oficio Certificado</span>
+            </div>
+
+            <!-- Desglose de Líneas -->
+            <div class="summary-lines-list">
+              <div class="summary-row">
+                <span>Subtotal catálogo (<span id="summary-items-count">2</span> piezas)</span>
+                <strong id="summary-subtotal">$1.110.000 ARS</strong>
+              </div>
+              <div class="summary-row">
+                <span class="row-with-icon">
+                  <span>Envío Guante Blanco CABA</span>
+                  <span class="material-symbols-outlined text-salvia" style="font-size: 14px;">info</span>
+                </span>
+                <span class="text-salvia font-semibold">Bonificado</span>
+              </div>
+              <div class="summary-row text-salvia font-semibold" id="summary-coupon-row">
+                <span>Cupón TALLER10 (-10%)</span>
+                <span id="summary-coupon-discount">-$111.000 ARS</span>
+              </div>
+              <div class="summary-row text-salvia font-semibold" id="summary-transfer-row">
+                <span>Ahorro Transferencia Bancaria (-15%)</span>
+                <span id="summary-transfer-discount">-$149.850 ARS</span>
+              </div>
+            </div>
+
+            <!-- Total Final Estimado -->
+            <div class="summary-total-box">
+              <div class="total-flex-between">
+                <div>
+                  <span class="total-label-lead">Total Final Estimado</span>
+                  <span class="total-note">IVA incluido • Sin costos ocultos</span>
+                </div>
+                <div class="total-price-wrap">
+                  <div class="total-price-line">
+                    <span class="total-price-value" id="summary-total">$849.150</span>
+                    <span class="total-price-currency">ARS</span>
+                  </div>
+                  <span class="total-installments-info" id="summary-cuotas">Ahorro extraordinario de $149.850 por pago bancario</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón de Acción Principal -->
+            <button type="button" class="btn-primary btn-checkout-main" id="main-checkout-cta" onclick="ejecutarAccionPrincipal()">
+              <span id="cta-button-text">FINALIZAR PEDIDO Y GENERAR ORDEN</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+
+            <!-- Reaseguros de Taller -->
+            <div class="summary-assurances">
+              <div class="assurance-item">
+                <span class="material-symbols-outlined text-salvia">check_circle</span>
+                <span>Embalaje de exportación en caja reforzada de madera</span>
+              </div>
+              <div class="assurance-item">
+                <span class="material-symbols-outlined text-salvia">schedule</span>
+                <span>Tiempo de producción y curado: 10 a 14 días hábiles</span>
+              </div>
+              <div class="assurance-item">
+                <span class="material-symbols-outlined text-salvia">support_agent</span>
+                <span>Asesor de ebanistería asignado por WhatsApp directo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Caja de Dudas / Asesoría Rápida -->
+          <div class="support-contact-box">
+            <div class="support-contact-info">
+              <span class="material-symbols-outlined text-siena">chat</span>
+              <span>¿Dudas sobre medidas o maderas?</span>
+            </div>
+            <a href="https://wa.me/5491145678900" target="_blank" rel="noopener noreferrer" class="support-contact-link">Consultar al Taller</a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ================= MODAL: SIMULACIÓN DE COMPRA EXITOSA ================= -->
+    <div class="checkout-modal-backdrop" id="order-success-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-order-number">
+      <div class="checkout-modal-card">
+        <button type="button" class="modal-close-btn" onclick="cerrarModalExito()" aria-label="Cerrar confirmación">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div class="modal-header-section">
+          <div class="modal-badge-icon">
+            <span class="material-symbols-outlined">check_circle</span>
+          </div>
+          <span class="modal-badge-label">¡Pedido Confirmado con Éxito!</span>
+          <h2 class="modal-order-title" id="modal-order-number">Orden Oficial #HJ-8429</h2>
+          <p class="modal-order-subtitle">
+            Tu solicitud ha sido ingresada formalmente en nuestro plan de producción de ebanistería artesanal en San Cristóbal.
+          </p>
+        </div>
+
+        <!-- Ficha de Datos del Pedido -->
+        <div class="modal-slip-card">
+          <div class="slip-row">
+            <span>Fecha de Recepción:</span>
+            <strong id="modal-order-date">15 de Febrero, 2025</strong>
+          </div>
+          <div class="slip-row">
+            <span>Titular del Encargo:</span>
+            <strong id="modal-customer-name">Martina González Alsina</strong>
+          </div>
+          <div class="slip-row">
+            <span>Dirección de Despacho:</span>
+            <strong id="modal-customer-address">Av. Montes de Oca 1240, CABA</strong>
+          </div>
+          <div class="slip-row">
+            <span>Método Seleccionado:</span>
+            <strong class="text-salvia" id="modal-payment-type">Transferencia Bancaria Directa (-15% Aplicado)</strong>
+          </div>
+          <div class="slip-row slip-total-highlight">
+            <span>Monto Total Abonado:</span>
+            <span class="text-siena font-bold" id="modal-final-total">$849.150 ARS</span>
+          </div>
+        </div>
+
+        <!-- Nota de Producción -->
+        <div class="modal-workshop-note">
+          <span class="material-symbols-outlined text-siena">handyman</span>
+          <p>
+            Nuestro maestro carpintero en San Cristóbal iniciará el sellado de vetas y el ensamble paciente de tus piezas. Recibirás fotografías de proceso por WhatsApp previo a coordinar el flete guante blanco.
+          </p>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="modal-actions-row">
+          <button type="button" class="btn-secondary" onclick="window.print()" style="flex: 1; justify-content: center;">
+            <span class="material-symbols-outlined">print</span>
+            <span>Imprimir Comprobante</span>
+          </button>
+          <button type="button" class="btn-primary" onclick="cerrarModalExito()" style="flex: 1; justify-content: center;">
+            <span class="material-symbols-outlined">storefront</span>
+            <span>Ver Mis Pedidos</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Pie de Página Oficial (Réplica Exacta) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Columna 1: Marca & Origen -->
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand-header">
+          <img src="assets/logo.jpg" alt="Logo Hermanos Jota" class="footer-logo-img">
+          <div class="footer-brand-title">
+            <span>HERMANOS</span>
+            <span>JOTA</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Ebanistería contemporánea y preservación del oficio maderero. Diseñamos piezas escultóricas creadas a mano con maderas nobles certificadas y herrajes macizos que envejecen con dignidad.
+        </p>
+        <div class="footer-workshop-badge">
+          <span class="material-symbols-outlined">verified</span>
+          <span>TALLER ARTESANAL EN BUENOS AIRES</span>
+        </div>
+      </div>
+
+      <!-- Columna 2: Información Útil -->
+      <div class="footer-col footer-info-col">
+        <h4 class="footer-col-title">INFORMACIÓN ÚTIL</h4>
+        <div class="footer-info-list">
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Av. San Juan 2847 - Barrio de San Cristóbal, CABA, Argentina</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <div>
+              <div>Lunes a viernes: 10:00 a 19:00 hs</div>
+              <div>Sábados de 10:00 a 14:00</div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:+541145678900">+54 11 4567-8900</a>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">mail</span>
+            <div>
+              <div><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></div>
+              <div><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">photo_camera</span>
+            <span>Instagram: @hermanosjota_ba</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3: Navegación -->
+      <div class="footer-col footer-nav-col">
+        <h4 class="footer-col-title">NAVEGACIÓN</h4>
+        <nav class="footer-links" aria-label="Enlaces rápidos del pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html">Catálogo Completo</a>
+          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto & Citas</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4: Boletín de Taller -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-col-title">BOLETÍN DE TALLER</h4>
+        <p class="footer-newsletter-text">
+          Novedades de nuevas series, aperturas de hornadas y procesos de ebanistería.
+        </p>
+        <form id="footer-newsletter-form" class="footer-newsletter-form">
+          <input 
+            type="email" 
+            class="footer-newsletter-input" 
+            placeholder="Tu correo electrónico" 
+            required 
+            aria-label="Tu correo electrónico"
+          >
+          <button type="submit" class="footer-newsletter-btn">SUSCRIBIRME</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Derechos y Métodos de Pago -->
+    <div class="container footer-bottom-bar">
+      <p class="footer-copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+      <div class="footer-payments" aria-label="Medios de pago aceptados">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">MERCADO PAGO</span>
+        <span class="payment-chip payment-chip-highlight">TRANSFERENCIA (-15%)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Modulares -->
+  <script src="js/productos.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
