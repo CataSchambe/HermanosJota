@@ -1,0 +1,24 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores y entornos de desarrollo (Visual Studio / VS Code / JetBrains)
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Dependencias y temporales
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+
+# Archivos temporales de pruebas
+scratch/
+temp/

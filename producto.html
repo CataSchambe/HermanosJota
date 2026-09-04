@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sillón Copacabana | Hermanos Jota Mueblería y Hogar</title>
+  
+  <!-- Tipografías Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Iconografía Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos Externa CSS3 -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra de Anuncios Superior -->
+  <div class="announcement-bar">
+    <span class="material-symbols-outlined">eco</span>
+    <p>3 y 6 cuotas fijas sin interés en maderas macizas y cueros seleccionados • Envíos a todo el país</p>
+  </div>
+
+  <!-- Encabezado Semántico -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-link" aria-label="Hermanos Jota - Inicio">
+        <img 
+          src="assets/logo.jpg" 
+          alt="Logotipo Hermanos Jota" 
+          class="brand-logo-img"
+        >
+        <div class="brand-text-wrap">
+          <span class="brand-name">Hermanos Jota</span>
+          <span class="brand-tagline">Mueblería y Hogar</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalogo.html" class="nav-link active">Catálogo</a>
+        <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto & Citas</a>
+      </nav>
+
+      <!-- Acciones de Cabecera -->
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="search" placeholder="Buscar en el taller..." aria-label="Buscar productos">
+        </div>
+
+        <button type="button" class="btn-header-action btn-open-cart" aria-label="Abrir Carrito de compras">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count-badge badge-hidden">0</span>
+        </button>
+
+        <a href="contacto.html" class="btn-header-action" aria-label="Asesoría y Citas">
+          <span class="material-symbols-outlined">support_agent</span>
+        </a>
+
+        <button type="button" class="btn-mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo Oficial</a>
+      <a href="nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto & Citas</a>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+    <!-- Migas de Pan (Breadcrumb Navigation Semántica) -->
+    <nav class="container breadcrumb-nav" aria-label="Ruta de navegación">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><span>/</span></li>
+        <li><a href="catalogo.html">Catálogo Oficial</a></li>
+        <li><span>/</span></li>
+        <li id="breadcrumb-category"><a href="catalogo.html">Living</a></li>
+        <li><span>/</span></li>
+        <li id="breadcrumb-current" aria-current="page" style="color: var(--color-siena); font-weight: 600;">Sillón Copacabana</li>
+      </ol>
+    </nav>
+
+    <!-- Escenario Principal de Producto (Flexbox 2 Columnas) -->
+    <section class="container product-detail-stage">
+      <!-- Columna Izquierda: Galería e Imágenes -->
+      <div class="product-gallery-wrap">
+        <div class="product-main-view">
+          <img 
+            id="main-product-img" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg" 
+            alt="Sillón Copacabana en cuero cognac"
+          >
+        </div>
+
+        <!-- Riel de Miniaturas Intercambiables con Eventos JS -->
+        <div class="thumbnails-rail" role="region" aria-label="Galería de tomas fotográficas">
+          <button 
+            type="button" 
+            class="thumb-btn active" 
+            data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg"
+            data-alt="Toma principal frontal"
+            aria-label="Ver toma principal"
+          >
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg" alt="Miniatura 1">
+          </button>
+
+          <button 
+            type="button" 
+            class="thumb-btn" 
+            data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzGNjpjivhg1Up1u081uMI-9DzvUZEFTbSJC9c_MEouL-Al-XyWFkVHjCUJTe-sZuRZdbfnOy5Kp_yRp0sPrWv-VzKxn9glZUVDgr48QRTvgRLCqdYMB9xSMNg7sagYnJdbpI3iTK3j1FNKfyzRrMBxm-gjlmeG1MJgu3akLB4MKgw13zvkaRNoI1QsEmzQCABwyFR5CSlV7fU3lewla1M3H80uCZrzme4cLendbBWIh2r_T_Uzx9rdsAYzpad56Tsg"
+            data-alt="Detalle Butaca complementaria"
+            aria-label="Ver pieza complementaria"
+          >
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzGNjpjivhg1Up1u081uMI-9DzvUZEFTbSJC9c_MEouL-Al-XyWFkVHjCUJTe-sZuRZdbfnOy5Kp_yRp0sPrWv-VzKxn9glZUVDgr48QRTvgRLCqdYMB9xSMNg7sagYnJdbpI3iTK3j1FNKfyzRrMBxm-gjlmeG1MJgu3akLB4MKgw13zvkaRNoI1QsEmzQCABwyFR5CSlV7fU3lewla1M3H80uCZrzme4cLendbBWIh2r_T_Uzx9rdsAYzpad56Tsg" alt="Miniatura 2">
+          </button>
+
+          <button 
+            type="button" 
+            class="thumb-btn" 
+            data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KPkT6MrXr5CuQ7JrTVhva7qBsz3YZipRM9g7ETgp7zEdsCO9j_luAFBg4BX5mMakgBU6pBOpM0zlzPBE_OLLE-nyEKaF8ZNf1aRaItAD-CHpEQXB1GnhH_wdNTkDT1qtq5CyJYrrcwnk1-7mWeb2EfOSOXzcPambplNoRtNif6Qbt8OcQFvyOIDkZhjh6kT-UjTFg2WnV47AhNwZLH3z7F9A2_kYCAV_uB5zMMYn6SPdcE_h_cFrworWjIhFvITS_w"
+            data-alt="Juego de sala Araucaria"
+            aria-label="Ver juego de sala"
+          >
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KPkT6MrXr5CuQ7JrTVhva7qBsz3YZipRM9g7ETgp7zEdsCO9j_luAFBg4BX5mMakgBU6pBOpM0zlzPBE_OLLE-nyEKaF8ZNf1aRaItAD-CHpEQXB1GnhH_wdNTkDT1qtq5CyJYrrcwnk1-7mWeb2EfOSOXzcPambplNoRtNif6Qbt8OcQFvyOIDkZhjh6kT-UjTFg2WnV47AhNwZLH3z7F9A2_kYCAV_uB5zMMYn6SPdcE_h_cFrworWjIhFvITS_w" alt="Miniatura 3">
+          </button>
+        </div>
+
+        <!-- Tira de atributos del taller -->
+        <div style="display: flex; justify-content: space-around; background-color: var(--color-alabastro); border: 1px solid var(--color-border-main); border-radius: var(--radius-sm); padding: 1rem; text-align: center;">
+          <div>
+            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-siena); display: block;">Maderas Nobles</strong>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">100% Petiribí y Roble FSC®</span>
+          </div>
+          <div style="border-left: 1px solid var(--color-border-main); border-right: 1px solid var(--color-border-main); padding: 0 1rem;">
+            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-salvia-dark); display: block;">Curtido Vegetal</strong>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">Sin cromo ni químicos nocivos</span>
+          </div>
+          <div>
+            <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-siena); display: block;">10 Años Garantía</strong>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">Estructura y ensamble</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Especificaciones y Compra -->
+      <div class="product-info-wrap" style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+          <span id="product-tag" style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-rosa); font-weight: 600;">
+            Colección Íconos del Confort • Catálogo Oficial
+          </span>
+          <h1 id="product-name" style="font-size: 2.25rem;">Sillón Copacabana</h1>
+          <p id="product-material" class="text-muted" style="font-size: 0.875rem;">
+            Roble macizo & Cuero Curtido
+          </p>
+        </div>
+
+        <div style="padding: 1.25rem; background-color: rgba(245, 230, 211, 0.4); border-radius: var(--radius-sm); border: 1px solid var(--color-border-main); display: flex; flex-direction: column; gap: 0.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span id="product-price" style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--color-siena);">$620.000 ARS</span>
+            <span class="product-badge badge-salvia" id="product-stock">Stock disponible</span>
+          </div>
+          <p id="product-cuotas" style="font-size: 0.75rem; color: var(--color-text-muted);">
+            6 cuotas fijas sin interés de <strong style="color: var(--color-siena); font-weight: 600;">$103.333</strong> con tarjetas bancarias
+          </p>
+          <span style="font-size: 0.6875rem; color: var(--color-salvia-dark); font-weight: 600;">
+            ✓ 15% de descuento adicional abonando mediante transferencia bancaria
+          </span>
+        </div>
+
+        <p id="product-description" style="line-height: 1.65; color: var(--color-text-muted); font-size: 0.9375rem;">
+          Pieza insignia de Hermanos Jota inspirada en la arquitectura carioca de los años 60. Cuero curtido vegetal que envejece con pátina noble y base de rotación 360° silenciosa.
+        </p>
+
+        <!-- Acciones de Compra -->
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <button type="button" class="btn-primary" id="btn-add-detail" style="width: 100%; padding: 1rem; font-size: 0.875rem;">
+            <span class="material-symbols-outlined">add_shopping_cart</span>
+            Añadir a la Bolsa de Compra
+          </button>
+          <a href="contacto.html" class="btn-secondary" style="width: 100%; text-align: center;">
+            Consultar al Asesor de Taller
+          </a>
+        </div>
+
+        <!-- Tabla de Dimensiones y Materiales con HTML Semántico -->
+        <div>
+          <h3 style="font-size: 1rem; margin-bottom: 0.75rem; color: var(--color-siena);">Ficha Técnica y Dimensiones</h3>
+          <table class="product-spec-table">
+            <tbody>
+              <tr>
+                <th>Madera Principal</th>
+                <td id="table-wood">Roble macizo y Petiribí FSC®</td>
+              </tr>
+              <tr>
+                <th>Acabado Superficial</th>
+                <td>Aceites botánicos puros y cera de abejas virgen</td>
+              </tr>
+              <tr>
+                <th>Medidas Estructurales</th>
+                <td id="table-dimensions">86 cm (ancho) x 84 cm (prof.) x 80 cm (alto)</td>
+              </tr>
+              <tr>
+                <th>Tipo de Ensamble</th>
+                <td>Caja y espiga oculta artesanal sin tornillería visible</td>
+              </tr>
+              <tr>
+                <th>Garantía Oficial</th>
+                <td id="table-warranty">10 años de garantía estructural de taller</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Panel Deslizante del Carrito -->
+  <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-drawer-heading" role="dialog" aria-modal="true">
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+      <div class="cart-header">
+        <div class="cart-header-title-wrap">
+          <span class="material-symbols-outlined text-siena">shopping_bag</span>
+          <h3 id="cart-drawer-heading" class="cart-title">Bolsa de Compra</h3>
+          <span class="cart-badge-count" id="drawer-count">0 piezas</span>
+        </div>
+        <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar bolsa de compra">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-list"></div>
+
+      <div class="cart-footer" id="cart-drawer-footer">
+        <div class="cart-summary-line">
+          <span>Subtotal de piezas</span>
+          <span id="cart-subtotal-val">$0 ARS</span>
+        </div>
+        <div class="cart-summary-line" style="color: var(--color-salvia-dark);">
+          <span>Descuento 15% por transferencia</span>
+          <span id="cart-discount-val">-$0 ARS</span>
+        </div>
+        <div class="cart-total-line">
+          <span class="cart-total-label">Total Estimado</span>
+          <span class="cart-total-price" id="cart-total-val">$0 ARS</span>
+        </div>
+        <p class="cart-cuotas-note" id="cart-cuotas-text">
+          Hasta 6 cuotas fijas sin interés en maderas macizas
+        </p>
+        <a href="contacto.html" class="btn-primary" style="width: 100%; text-align: center;">
+          Iniciar Consulta o Pedido
+        </a>
+        <button type="button" class="btn-link" id="clear-cart-btn" style="justify-content: center; font-size: 0.75rem; color: var(--color-text-muted);">
+          Vaciar selección
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Notificación Toast Emergente -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
+    <span class="material-symbols-outlined toast-icon">check_circle</span>
+    <div>
+      <p class="toast-title" id="toast-title">Pieza añadida</p>
+      <p class="toast-subtitle" id="toast-subtitle">Se integró al pedido</p>
+    </div>
+  </div>
+
+  <!-- Pie de Página Oficial (Réplica Exacta) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Columna 1: Marca & Origen -->
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand-header">
+          <img src="assets/logo.jpg" alt="Logo Hermanos Jota" class="footer-logo-img">
+          <div class="footer-brand-title">
+            <span>HERMANOS</span>
+            <span>JOTA</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Ebanistería contemporánea y preservación del oficio maderero. Diseñamos piezas escultóricas creadas a mano con maderas nobles certificadas y herrajes macizos que envejecen con dignidad.
+        </p>
+        <div class="footer-workshop-badge">
+          <span class="material-symbols-outlined">verified</span>
+          <span>TALLER ARTESANAL EN BUENOS AIRES</span>
+        </div>
+      </div>
+
+      <!-- Columna 2: Información Útil -->
+      <div class="footer-col footer-info-col">
+        <h4 class="footer-col-title">INFORMACIÓN ÚTIL</h4>
+        <div class="footer-info-list">
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Av. San Juan 2847 - Barrio de San Cristóbal, CABA, Argentina</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <div>
+              <div>Lunes a viernes: 10:00 a 19:00 hs</div>
+              <div>Sábados de 10:00 a 14:00</div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:+541145678900">+54 11 4567-8900</a>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">mail</span>
+            <div>
+              <div><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></div>
+              <div><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">photo_camera</span>
+            <span>Instagram: @hermanosjota_ba</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3: Navegación -->
+      <div class="footer-col footer-nav-col">
+        <h4 class="footer-col-title">NAVEGACIÓN</h4>
+        <nav class="footer-links" aria-label="Enlaces rápidos del pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html">Catálogo Completo</a>
+          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto & Citas</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4: Boletín de Taller -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-col-title">BOLETÍN DE TALLER</h4>
+        <p class="footer-newsletter-text">
+          Novedades de nuevas series, aperturas de hornadas y procesos de ebanistería.
+        </p>
+        <form id="footer-newsletter-form" class="footer-newsletter-form">
+          <input 
+            type="email" 
+            class="footer-newsletter-input" 
+            placeholder="Tu correo electrónico" 
+            required 
+            aria-label="Tu correo electrónico"
+          >
+          <button type="submit" class="footer-newsletter-btn">SUSCRIBIRME</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Derechos y Métodos de Pago -->
+    <div class="container footer-bottom-bar">
+      <p class="footer-copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+      <div class="footer-payments" aria-label="Medios de pago aceptados">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">MERCADO PAGO</span>
+        <span class="payment-chip payment-chip-highlight">TRANSFERENCIA (-15%)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Modulares -->
+  <script src="js/productos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Script específico de la página de detalle para cargar dinámicamente si hay parámetro ?id= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const prodId = urlParams.get('id') || 'copacabana';
+      const producto = buscarProductoPorId(prodId);
+
+      if (producto) {
+        document.title = `${producto.nombre} | Hermanos Jota Mueblería y Hogar`;
+        
+        const nameEl = document.getElementById('product-name');
+        const priceEl = document.getElementById('product-price');
+        const descEl = document.getElementById('product-description');
+        const matEl = document.getElementById('product-material');
+        const cuotasEl = document.getElementById('product-cuotas');
+        const mainImg = document.getElementById('main-product-img');
+        const breadcrumbCurrent = document.getElementById('breadcrumb-current');
+        const breadcrumbCat = document.getElementById('breadcrumb-category');
+        const tableWood = document.getElementById('table-wood');
+        const tableDimensions = document.getElementById('table-dimensions');
+        const tableWarranty = document.getElementById('table-warranty');
+        const tagEl = document.getElementById('product-tag');
+
+        if (nameEl) nameEl.textContent = producto.nombre;
+        if (priceEl) priceEl.textContent = formatearPrecio(producto.precio);
+        if (descEl) descEl.textContent = producto.descripcion;
+        if (matEl) matEl.textContent = producto.materialDetalle || producto.maderaNombre;
+        if (cuotasEl) cuotasEl.innerHTML = `6 cuotas fijas sin interés de <strong style="color: var(--color-siena); font-weight: 600;">${formatearPrecio(producto.cuotaMonto)}</strong> con tarjetas bancarias`;
+        if (mainImg) {
+          mainImg.src = producto.imagen;
+          mainImg.alt = `${producto.nombre} en ${producto.maderaNombre}`;
+        }
+        if (breadcrumbCurrent) breadcrumbCurrent.textContent = producto.nombre;
+        if (breadcrumbCat) breadcrumbCat.innerHTML = `<a href="catalogo.html">${producto.categoria.toUpperCase()}</a>`;
+        if (tableWood) tableWood.textContent = producto.maderaNombre;
+        if (tableDimensions) tableDimensions.textContent = producto.medidas;
+        if (tableWarranty) tableWarranty.textContent = producto.garantia;
+        if (tagEl) tagEl.textContent = `${producto.subcategoria.toUpperCase()} • CATÁLOGO OFICIAL`;
+
+        // Botón de Añadir en la vista de detalle
+        const btnAdd = document.getElementById('btn-add-detail');
+        if (btnAdd) {
+          btnAdd.addEventListener('click', () => {
+            agregarAlCarrito(producto.id, 1);
+            setTimeout(abrirDrawerCarrito, 350);
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

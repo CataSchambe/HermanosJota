@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermanos Jota | Mueblería y Hogar - Diseño de Autor en Maderas Nobles</title>
+  
+  <!-- Tipografías Google Fonts Oficiales: Playfair Display e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Iconografía Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos Externa CSS3 -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra de Anuncios Superior -->
+  <div class="announcement-bar">
+    <span class="material-symbols-outlined">eco</span>
+    <p>Mueblería y Hogar • 3 y 6 cuotas fijas sin interés en maderas macizas • Envíos cuidados a todo el país</p>
+  </div>
+
+  <!-- Encabezado Semántico Principal -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <!-- Logotipo de Marca -->
+      <a href="index.html" class="brand-logo-link" aria-label="Hermanos Jota - Inicio">
+        <img 
+          src="assets/logo.jpg" 
+          alt="Logotipo Hermanos Jota" 
+          class="brand-logo-img"
+        >
+        <div class="brand-text-wrap">
+          <span class="brand-name">Hermanos Jota</span>
+          <span class="brand-tagline">Mueblería y Hogar</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+        <a href="catalogo.html" class="nav-link">Catálogo</a>
+        <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto & Citas</a>
+      </nav>
+
+      <!-- Acciones de Cabecera (Buscador, Carrito, Menú Móvil) -->
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="search" placeholder="Buscar en el taller..." aria-label="Buscar productos">
+        </div>
+
+        <button type="button" class="btn-header-action btn-open-cart" aria-label="Abrir Carrito de compras">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count-badge badge-hidden">0</span>
+        </button>
+
+        <a href="contacto.html" class="btn-header-action" aria-label="Asesoría y Contacto">
+          <span class="material-symbols-outlined">support_agent</span>
+        </a>
+
+        <!-- Botón Menú Móvil -->
+        <button type="button" class="btn-mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Desplegable para Móviles -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="catalogo.html">Catálogo Oficial</a>
+      <a href="nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto & Citas</a>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal Semántico -->
+  <main>
+    <!-- Sección 1: Hero Editorial -->
+    <section class="hero-section">
+      <div class="container hero-flex">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="material-symbols-outlined" style="font-size: 1rem;">eco</span>
+            <span>Mueblería Sostenible • Maderas FSC®</span>
+          </div>
+
+          <h1 class="hero-title">
+            Diseño Atemporal En Maderas Nobles Y Calma Visual
+          </h1>
+
+          <p class="hero-desc">
+            Concebimos cada mueble como una pieza viva de ebanistería noble. Encastres de precisión a caja y espiga, maderas argentinas certificadas y acabados con aceites vegetales que resaltan la honestidad de cada veta.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="catalogo.html" class="btn-primary">
+              <span>Explorar Colección</span>
+              <span class="material-symbols-outlined" style="font-size: 1.1rem;">arrow_forward</span>
+            </a>
+            <a href="nosotros.html" class="btn-secondary">
+              <span>Manifiesto de Taller</span>
+            </a>
+          </div>
+
+          <!-- Métricas de Taller -->
+          <div class="hero-metrics">
+            <div>
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Petiribí & Roble FSC®</span>
+            </div>
+            <div>
+              <span class="metric-number" style="color: var(--color-salvia-dark);">10 Años</span>
+              <span class="metric-label">Garantía estructural</span>
+            </div>
+            <div>
+              <span class="metric-number" style="color: var(--color-oro);">6 Cuotas</span>
+              <span class="metric-label">Fijas sin interés</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vitrina Visual de Pieza Insignia -->
+        <div class="hero-visual-card">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg" 
+            alt="Sillón Copacabana en cuero genuino cognac y roble macizo"
+            class="hero-visual-img"
+          >
+          <div class="hero-visual-badge">
+            <div>
+              <span style="font-size: 0.6875rem; text-transform: uppercase; color: var(--color-oro); font-weight: 600;">★ Pieza de Distinción</span>
+              <h4 class="hero-visual-badge-title">Sillón Copacabana</h4>
+              <p class="hero-visual-badge-desc">Cuero curtido anilina & base giratoria</p>
+            </div>
+            <a href="producto.html?id=copacabana" class="btn-primary" style="padding: 0.5rem 0.85rem; font-size: 0.75rem;">Ver Ficha</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2: Selección de Piezas Destacadas -->
+    <section style="padding: 4rem 0; background-color: rgba(245, 230, 211, 0.35); border-bottom: 1px solid var(--color-border-main);">
+      <div class="container">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem;">
+          <div class="catalog-eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>Piezas Icónicas de Autor</span>
+          </div>
+          <h2 style="font-size: 1.875rem;">Obras Vivas en Madera Maciza</h2>
+          <p class="text-muted" style="max-width: 40rem;">
+            Cada diseño es producido bajo pedido en series limitadas, ensamblado pacientemente por maestros ebanistas en nuestro taller de Buenos Aires.
+          </p>
+        </div>
+
+        <!-- Grilla de 4 productos destacados con HTML5 semántico -->
+        <div class="catalog-grid" style="padding: 0;">
+          <!-- 1. Aparador Uspallata -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuATxqErtvTsdhAQpefAV5FyeTkmH-PpVKgfvfDaIZGwRx2DyUi9E1rfGa5N1fBYewv964axAaLpagZSMOfUUwMpsD4gVlesTK5KAMj1TytE0i_g6nRACIKSwVt_UYizc_VNTPxhmNj_I8SqcwIwNb7NyTuxjwM3k5lG454kGwQfd7xhdVPqxIdvkgqyC_nRYbo6GCPt3kLTMsd4lcj1JPFPMOWTfwh9r6O9Yd13yov-CKljC_RUxFHrH7CMseQs7yFqUw" alt="Aparador Uspallata" class="product-card-img">
+              <span class="product-badge badge-salvia">Maderas FSC®</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-meta">
+                <span class="product-subcat">Almacenamiento / Credenza</span>
+                <h3 class="product-title">Aparador Uspallata</h3>
+                <p class="product-desc">Nogal macizo FSC, esterillado natural francés y herrajes en latón macizo cepillado.</p>
+              </div>
+              <div class="product-card-pricing">
+                <div class="price-block">
+                  <span class="price-amount">$490.000 ARS</span>
+                  <span class="price-installments">6 cuotas sin interés de <strong>$81.666</strong></span>
+                </div>
+                <div class="product-card-actions">
+                  <button type="button" class="btn-primary btn-add-cart" data-id="uspallata">
+                    <span class="material-symbols-outlined">add_shopping_cart</span> Añadir
+                  </button>
+                  <a href="producto.html?id=uspallata" class="btn-secondary">Detalle</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Sillón Copacabana -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg" alt="Sillón Copacabana" class="product-card-img">
+              <span class="product-badge badge-siena">Cuero Cognac</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-meta">
+                <span class="product-subcat">Poltronas de Autor</span>
+                <h3 class="product-title">Sillón Copacabana</h3>
+                <p class="product-desc">Cuero curtido anilina vegetal en tono cognac con apoyabrazos esculpidos a mano y base reforzada.</p>
+              </div>
+              <div class="product-card-pricing">
+                <div class="price-block">
+                  <span class="price-amount">$620.000 ARS</span>
+                  <span class="price-installments">6 cuotas sin interés de <strong>$103.333</strong></span>
+                </div>
+                <div class="product-card-actions">
+                  <button type="button" class="btn-primary btn-add-cart" data-id="copacabana">
+                    <span class="material-symbols-outlined">add_shopping_cart</span> Añadir
+                  </button>
+                  <a href="producto.html?id=copacabana" class="btn-secondary">Detalle</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Butaca Mendoza -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzGNjpjivhg1Up1u081uMI-9DzvUZEFTbSJC9c_MEouL-Al-XyWFkVHjCUJTe-sZuRZdbfnOy5Kp_yRp0sPrWv-VzKxn9glZUVDgr48QRTvgRLCqdYMB9xSMNg7sagYnJdbpI3iTK3j1FNKfyzRrMBxm-gjlmeG1MJgu3akLB4MKgw13zvkaRNoI1QsEmzQCABwyFR5CSlV7fU3lewla1M3H80uCZrzme4cLendbBWIh2r_T_Uzx9rdsAYzpad56Tsg" alt="Butaca Mendoza" class="product-card-img">
+              <span class="product-badge badge-rosa">Dusty Rose</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-meta">
+                <span class="product-subcat">Living / Sillones Táctiles</span>
+                <h3 class="product-title">Butaca Mendoza</h3>
+                <p class="product-desc">Tapizada en bouclé aterciopelado Dusty Rose sobre estructura de guatambú macizo encerado.</p>
+              </div>
+              <div class="product-card-pricing">
+                <div class="price-block">
+                  <span class="price-amount">$285.000 ARS</span>
+                  <span class="price-installments">6 cuotas sin interés de <strong>$47.500</strong></span>
+                </div>
+                <div class="product-card-actions">
+                  <button type="button" class="btn-primary btn-add-cart" data-id="mendoza">
+                    <span class="material-symbols-outlined">add_shopping_cart</span> Añadir
+                  </button>
+                  <a href="producto.html?id=mendoza" class="btn-secondary">Detalle</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Mesa Comedor Pampa -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWlPsaEZ5hwAX0o2Xg-qC-WocLXs5i5cp9D1j3CrtsbUgCllRrGKZFff19NukjXT3jirpVUTyVpkw-QIAs-xhKvicxeHtxDdSEnya4r0icxSfeIhpSo4dTNjUm8Qs7Xt20JTzkbT-mGYSciZpDBIJkm1TnvmIrPY-7_JApsnVbMLh4kRWo-MMnSU1Xp9CAubhgjG9oEEz2IMqfGy2qNptCDt4EqWfrfE_B8O0fEXHHkcfG0_C3x0EZFOKykcmYmEDeIQ" alt="Mesa Comedor Pampa" class="product-card-img">
+              <span class="product-badge badge-salvia">Roble FSC®</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-meta">
+                <span class="product-subcat">Comedor / Encuentro</span>
+                <h3 class="product-title">Mesa Comedor Pampa</h3>
+                <p class="product-desc">Roble macizo continuo con patas esculturales en ángulo y terminación hidrorrepelente mate.</p>
+              </div>
+              <div class="product-card-pricing">
+                <div class="price-block">
+                  <span class="price-amount">$780.000 ARS</span>
+                  <span class="price-installments">6 cuotas sin interés de <strong>$130.000</strong></span>
+                </div>
+                <div class="product-card-actions">
+                  <button type="button" class="btn-primary btn-add-cart" data-id="pampa">
+                    <span class="material-symbols-outlined">add_shopping_cart</span> Añadir
+                  </button>
+                  <a href="producto.html?id=pampa" class="btn-secondary">Detalle</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="catalogo.html" class="btn-primary">
+            <span>Ver las 11 Piezas del Catálogo Completo</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3: Compromiso de Ebanistería y Beneficios -->
+    <section style="padding: 4rem 0;">
+      <div class="container">
+        <div class="pillars-grid" style="padding: 0;">
+          <div class="pillar-card">
+            <span class="pillar-num">01</span>
+            <h3 style="font-size: 1.125rem;">Madera con Trazabilidad</h3>
+            <p class="text-muted" style="font-size: 0.875rem;">Maderas macizas con certificación FSC®. Secado lento a temperatura controlada para evitar alabeos futuros.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">02</span>
+            <h3 style="font-size: 1.125rem;">Ensamble Tradicional</h3>
+            <p class="text-muted" style="font-size: 0.875rem;">Uniones a caja y espiga trabajadas manualmente sin tornillos vistos. Acabados con ceras y aceites botánicos.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">03</span>
+            <h3 style="font-size: 1.125rem;">Programa Herencia Viva</h3>
+            <p class="text-muted" style="font-size: 0.875rem;">Garantía de 10 años en estructura y servicio de restauración de por vida para preservar cada legado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Panel Deslizante del Carrito (Slide-over Drawer) -->
+  <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-drawer-heading" role="dialog" aria-modal="true">
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+      <!-- Cabecera del Drawer -->
+      <div class="cart-header">
+        <div class="cart-header-title-wrap">
+          <span class="material-symbols-outlined text-siena">shopping_bag</span>
+          <h3 id="cart-drawer-heading" class="cart-title">Bolsa de Compra</h3>
+          <span class="cart-badge-count" id="drawer-count">0 piezas</span>
+        </div>
+        <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar bolsa de compra">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <!-- Lista dinámica de ítems manipulada vía DOM -->
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Renderizado dinámico desde js/carrito.js -->
+      </div>
+
+      <!-- Footer del Drawer con totales y botón de pedido -->
+      <div class="cart-footer" id="cart-drawer-footer">
+        <div class="cart-summary-line">
+          <span>Subtotal de piezas</span>
+          <span id="cart-subtotal-val">$0 ARS</span>
+        </div>
+        <div class="cart-summary-line" style="color: var(--color-salvia-dark);">
+          <span>Descuento 15% por transferencia</span>
+          <span id="cart-discount-val">-$0 ARS</span>
+        </div>
+        <div class="cart-total-line">
+          <span class="cart-total-label">Total Estimado</span>
+          <span class="cart-total-price" id="cart-total-val">$0 ARS</span>
+        </div>
+        <p class="cart-cuotas-note" id="cart-cuotas-text">
+          Hasta 6 cuotas fijas sin interés en maderas macizas
+        </p>
+        <a href="contacto.html" class="btn-primary" style="width: 100%; text-align: center;">
+          Iniciar Consulta o Pedido
+        </a>
+        <button type="button" class="btn-link" id="clear-cart-btn" style="justify-content: center; font-size: 0.75rem; color: var(--color-text-muted);">
+          Vaciar selección
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Notificación Toast Emergente -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
+    <span class="material-symbols-outlined toast-icon">check_circle</span>
+    <div>
+      <p class="toast-title" id="toast-title">Pieza añadida</p>
+      <p class="toast-subtitle" id="toast-subtitle">Se integró al pedido</p>
+    </div>
+  </div>
+
+  <!-- Pie de Página Oficial (Réplica Exacta) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Columna 1: Marca & Origen -->
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand-header">
+          <img src="assets/logo.jpg" alt="Logo Hermanos Jota" class="footer-logo-img">
+          <div class="footer-brand-title">
+            <span>HERMANOS</span>
+            <span>JOTA</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Ebanistería contemporánea y preservación del oficio maderero. Diseñamos piezas escultóricas creadas a mano con maderas nobles certificadas y herrajes macizos que envejecen con dignidad.
+        </p>
+        <div class="footer-workshop-badge">
+          <span class="material-symbols-outlined">verified</span>
+          <span>TALLER ARTESANAL EN BUENOS AIRES</span>
+        </div>
+      </div>
+
+      <!-- Columna 2: Información Útil -->
+      <div class="footer-col footer-info-col">
+        <h4 class="footer-col-title">INFORMACIÓN ÚTIL</h4>
+        <div class="footer-info-list">
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Av. San Juan 2847 - Barrio de San Cristóbal, CABA, Argentina</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <div>
+              <div>Lunes a viernes: 10:00 a 19:00 hs</div>
+              <div>Sábados de 10:00 a 14:00</div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:+541145678900">+54 11 4567-8900</a>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">mail</span>
+            <div>
+              <div><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></div>
+              <div><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">photo_camera</span>
+            <span>Instagram: @hermanosjota_ba</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3: Navegación -->
+      <div class="footer-col footer-nav-col">
+        <h4 class="footer-col-title">NAVEGACIÓN</h4>
+        <nav class="footer-links" aria-label="Enlaces rápidos del pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html">Catálogo Completo</a>
+          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto & Citas</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4: Boletín de Taller -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-col-title">BOLETÍN DE TALLER</h4>
+        <p class="footer-newsletter-text">
+          Novedades de nuevas series, aperturas de hornadas y procesos de ebanistería.
+        </p>
+        <form id="footer-newsletter-form" class="footer-newsletter-form">
+          <input 
+            type="email" 
+            class="footer-newsletter-input" 
+            placeholder="Tu correo electrónico" 
+            required 
+            aria-label="Tu correo electrónico"
+          >
+          <button type="submit" class="footer-newsletter-btn">SUSCRIBIRME</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Derechos y Métodos de Pago -->
+    <div class="container footer-bottom-bar">
+      <p class="footer-copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+      <div class="footer-payments" aria-label="Medios de pago aceptados">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">MERCADO PAGO</span>
+        <span class="payment-chip payment-chip-highlight">TRANSFERENCIA (-15%)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Modulares en JavaScript -->
+  <script src="js/productos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

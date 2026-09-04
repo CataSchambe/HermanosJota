@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros | Hermanos Jota - Manifiesto de Taller & Historia</title>
+  
+  <!-- Tipografías Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Iconografía Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos Externa CSS3 -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra de Anuncios Superior -->
+  <div class="announcement-bar">
+    <span class="material-symbols-outlined">eco</span>
+    <p>Envíos cuidados a todo el país • Showroom San Cristóbal • Lun a Sáb 11 a 19 hs</p>
+  </div>
+
+  <!-- Encabezado Semántico -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-link" aria-label="Hermanos Jota - Inicio">
+        <img 
+          src="assets/logo.jpg" 
+          alt="Logotipo Hermanos Jota" 
+          class="brand-logo-img"
+        >
+        <div class="brand-text-wrap">
+          <span class="brand-name">Hermanos Jota</span>
+          <span class="brand-tagline">Mueblería y Hogar</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalogo.html" class="nav-link">Catálogo</a>
+        <a href="nosotros.html" class="nav-link active" aria-current="page">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto & Citas</a>
+      </nav>
+
+      <!-- Acciones de Cabecera -->
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="search" placeholder="Buscar piezas o historia..." aria-label="Buscar productos">
+        </div>
+
+        <button type="button" class="btn-header-action btn-open-cart" aria-label="Abrir Carrito de compras">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count-badge badge-hidden">0</span>
+        </button>
+
+        <a href="contacto.html" class="btn-header-action" aria-label="Asesoría y Citas">
+          <span class="material-symbols-outlined">support_agent</span>
+        </a>
+
+        <button type="button" class="btn-mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo Oficial</a>
+      <a href="nosotros.html" class="active">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto & Citas</a>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+    <!-- Sección Manifiesto de Taller (Hero Editorial) -->
+    <section class="manifesto-section">
+      <div class="container manifesto-inner">
+        <div class="manifesto-tag">
+          <span class="material-symbols-outlined">carpenter</span>
+          <span>ORIGEN &amp; VOCACIÓN • TALLER EN SAN CRISTOBAL</span>
+        </div>
+
+        <h1 class="manifesto-title">MANIFIESTO DE TALLER</h1>
+        
+        <div class="manifesto-divider"></div>
+
+        <div class="manifesto-body">
+          <p>
+            Hace más de seis décadas, en 1960, Juan José fundó en Buenos Aires una pequeña carpintería que llevaba su apellido y su pasión por el trabajo artesanal. Lo que comenzó como un modesto taller, pronto se transformó en la reconocida mueblería Hermanos Jota.
+          </p>
+          <p>
+            Hoy, bajo la dirección de Carla, tercera generación comprometida con la tradición familiar, seguimos trabajando bajo los principios del diseño mid-century modern: líneas limpias, materiales nobles, funcionalidad clara y estética atemporal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tres Pilares Fundamentales -->
+    <section class="container" style="padding-bottom: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-siena); font-weight: 600;">NUESTROS PRINCIPIOS</span>
+          <h2 style="font-size: 1.75rem;">Oficio, Tiempo & Sustancia</h2>
+        </div>
+        <span style="font-size: 0.75rem; color: var(--color-text-muted); display: none; align-items: center; gap: 0.25rem;" class="sm-visible">
+          <span class="material-symbols-outlined" style="color: var(--color-salvia-dark); font-size: 1.1rem;">verified</span>
+          Garantía de ensamble artesanal
+        </span>
+      </div>
+
+      <div class="pillars-grid" style="padding: 0;">
+        <article class="pillar-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="pillar-num">01</span>
+              <span class="product-badge badge-salvia">FSC® 100%</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Madera con Identidad</h3>
+            <p class="text-muted" style="font-size: 0.875rem; line-height: 1.6;">
+              Selección rigurosa de maderas macizas estacionadas (Petiribí, Paraíso, Nogal y Roble) con certificación FSC® y manejo forestal responsable de monte nativo regenerado.
+            </p>
+          </div>
+          <div style="padding-top: 1rem; border-top: 1px solid var(--color-border-main); font-size: 0.75rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem;">
+            <span class="material-symbols-outlined" style="color: var(--color-salvia-dark); font-size: 1rem;">forest</span>
+            <span>Secado lento a temperatura y humedad controladas</span>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="pillar-num">02</span>
+              <span class="product-badge badge-oro">A Mano</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Ebanistería Manual</h3>
+            <p class="text-muted" style="font-size: 0.875rem; line-height: 1.6;">
+              Uniones a caja y espiga, espigados ciegos y encastres tradicionales sin herrajes a la vista. Acabado al pulso paciente de nuestros ebanistas con aceites vegetales puros y ceras orgánicas.
+            </p>
+          </div>
+          <div style="padding-top: 1rem; border-top: 1px solid var(--color-border-main); font-size: 0.75rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem;">
+            <span class="material-symbols-outlined" style="color: var(--color-siena); font-size: 1rem;">handshake</span>
+            <span>Tacto sedoso sin barnices sintéticos tóxicos</span>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="pillar-num">03</span>
+              <span class="product-badge badge-siena">Atemporal</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Calma Visual</h3>
+            <p class="text-muted" style="font-size: 0.875rem; line-height: 1.6;">
+              Siluetas limpias inspiradas en la serenidad funcional y el despojo escandinavo. Muebles diseñados con solidez para convivir con múltiples generaciones y transformar espacios cotidianos.
+            </p>
+          </div>
+          <div style="padding-top: 1rem; border-top: 1px solid var(--color-border-main); font-size: 0.75rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem;">
+            <span class="material-symbols-outlined" style="color: var(--color-oro); font-size: 1rem;">spa</span>
+            <span>Proporciones áureas & armonía espacial</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Programa Herencia Viva (Compromiso de Longevidad) -->
+    <section style="padding: 4rem 0; background-color: var(--color-alabastro); border-top: 1px solid var(--color-border-main); border-bottom: 1px solid var(--color-border-main);">
+      <div class="container" style="max-width: 54rem;">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-siena); font-weight: 600;">COMPROMISO DE LONGEVIDAD</span>
+          <h2 style="font-size: 2rem; margin-top: 0.25rem;">Programa "Herencia Viva"</h2>
+          <div class="divider-gold"></div>
+          <p class="text-muted" style="font-size: 0.9375rem;">
+            No creemos en muebles descartables. Respaldamos cada creación para que se mantenga viva en su hogar por décadas.
+          </p>
+        </div>
+
+        <ul style="display: flex; flex-direction: column; gap: 1rem; background-color: var(--color-white); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-main); box-shadow: var(--shadow-sm);">
+          <li style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="material-symbols-outlined text-salvia" style="font-size: 1.5rem;">verified</span>
+            <div>
+              <strong style="color: var(--color-siena); font-family: var(--font-serif); font-size: 1rem;">Garantía extendida:</strong>
+              <p class="text-muted" style="font-size: 0.875rem;">10 años de respaldo en estructura sólida y 5 años en acabados al aceite natural.</p>
+            </div>
+          </li>
+          <li style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="material-symbols-outlined text-salvia" style="font-size: 1.5rem;">build</span>
+            <div>
+              <strong style="color: var(--color-siena); font-family: var(--font-serif); font-size: 1rem;">Servicio de restauración:</strong>
+              <p class="text-muted" style="font-size: 0.875rem;">Recuperamos, lijamos y renovamos piezas antiguas de clientes Hermanos Jota a precio de costo.</p>
+            </div>
+          </li>
+          <li style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="material-symbols-outlined text-salvia" style="font-size: 1.5rem;">school</span>
+            <div>
+              <strong style="color: var(--color-siena); font-family: var(--font-serif); font-size: 1rem;">Taller de cuidados:</strong>
+              <p class="text-muted" style="font-size: 0.875rem;">Capacitación gratuita semestral y kit de nutrición con cera de abejas para nuestros compradores.</p>
+            </div>
+          </li>
+          <li style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="material-symbols-outlined text-salvia" style="font-size: 1.5rem;">replay</span>
+            <div>
+              <strong style="color: var(--color-siena); font-family: var(--font-serif); font-size: 1rem;">Recompra garantizada:</strong>
+              <p class="text-muted" style="font-size: 0.875rem;">Tomamos piezas de autor bien cuidadas hasta por un 40% de su valor al renovar su espacio.</p>
+            </div>
+          </li>
+          <li style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="material-symbols-outlined text-salvia" style="font-size: 1.5rem;">description</span>
+            <div>
+              <strong style="color: var(--color-siena); font-family: var(--font-serif); font-size: 1rem;">Certificado de trazabilidad:</strong>
+              <p class="text-muted" style="font-size: 0.875rem;">Cada mueble cuenta con una placa en bajo relieve con fecha de forja y procedencia del lote forestal.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="contacto.html" class="btn-primary">
+            <span>Coordinar Visita al Taller en San Cristóbal</span>
+            <span class="material-symbols-outlined">north_east</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Panel Deslizante del Carrito -->
+  <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-drawer-heading" role="dialog" aria-modal="true">
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+      <div class="cart-header">
+        <div class="cart-header-title-wrap">
+          <span class="material-symbols-outlined text-siena">shopping_bag</span>
+          <h3 id="cart-drawer-heading" class="cart-title">Bolsa de Compra</h3>
+          <span class="cart-badge-count" id="drawer-count">0 piezas</span>
+        </div>
+        <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar bolsa de compra">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-list"></div>
+
+      <div class="cart-footer" id="cart-drawer-footer">
+        <div class="cart-summary-line">
+          <span>Subtotal de piezas</span>
+          <span id="cart-subtotal-val">$0 ARS</span>
+        </div>
+        <div class="cart-summary-line" style="color: var(--color-salvia-dark);">
+          <span>Descuento 15% por transferencia</span>
+          <span id="cart-discount-val">-$0 ARS</span>
+        </div>
+        <div class="cart-total-line">
+          <span class="cart-total-label">Total Estimado</span>
+          <span class="cart-total-price" id="cart-total-val">$0 ARS</span>
+        </div>
+        <p class="cart-cuotas-note" id="cart-cuotas-text">
+          Hasta 6 cuotas fijas sin interés en maderas macizas
+        </p>
+        <a href="contacto.html" class="btn-primary" style="width: 100%; text-align: center;">
+          Iniciar Consulta o Pedido
+        </a>
+        <button type="button" class="btn-link" id="clear-cart-btn" style="justify-content: center; font-size: 0.75rem; color: var(--color-text-muted);">
+          Vaciar selección
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Notificación Toast Emergente -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
+    <span class="material-symbols-outlined toast-icon">check_circle</span>
+    <div>
+      <p class="toast-title" id="toast-title">Pieza añadida</p>
+      <p class="toast-subtitle" id="toast-subtitle">Se integró al pedido</p>
+    </div>
+  </div>
+
+  <!-- Pie de Página Oficial (Réplica Exacta) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Columna 1: Marca & Origen -->
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand-header">
+          <img src="assets/logo.jpg" alt="Logo Hermanos Jota" class="footer-logo-img">
+          <div class="footer-brand-title">
+            <span>HERMANOS</span>
+            <span>JOTA</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Ebanistería contemporánea y preservación del oficio maderero. Diseñamos piezas escultóricas creadas a mano con maderas nobles certificadas y herrajes macizos que envejecen con dignidad.
+        </p>
+        <div class="footer-workshop-badge">
+          <span class="material-symbols-outlined">verified</span>
+          <span>TALLER ARTESANAL EN BUENOS AIRES</span>
+        </div>
+      </div>
+
+      <!-- Columna 2: Información Útil -->
+      <div class="footer-col footer-info-col">
+        <h4 class="footer-col-title">INFORMACIÓN ÚTIL</h4>
+        <div class="footer-info-list">
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Av. San Juan 2847 - Barrio de San Cristóbal, CABA, Argentina</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <div>
+              <div>Lunes a viernes: 10:00 a 19:00 hs</div>
+              <div>Sábados de 10:00 a 14:00</div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:+541145678900">+54 11 4567-8900</a>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">mail</span>
+            <div>
+              <div><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></div>
+              <div><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">photo_camera</span>
+            <span>Instagram: @hermanosjota_ba</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3: Navegación -->
+      <div class="footer-col footer-nav-col">
+        <h4 class="footer-col-title">NAVEGACIÓN</h4>
+        <nav class="footer-links" aria-label="Enlaces rápidos del pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html">Catálogo Completo</a>
+          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto & Citas</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4: Boletín de Taller -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-col-title">BOLETÍN DE TALLER</h4>
+        <p class="footer-newsletter-text">
+          Novedades de nuevas series, aperturas de hornadas y procesos de ebanistería.
+        </p>
+        <form id="footer-newsletter-form" class="footer-newsletter-form">
+          <input 
+            type="email" 
+            class="footer-newsletter-input" 
+            placeholder="Tu correo electrónico" 
+            required 
+            aria-label="Tu correo electrónico"
+          >
+          <button type="submit" class="footer-newsletter-btn">SUSCRIBIRME</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Derechos y Métodos de Pago -->
+    <div class="container footer-bottom-bar">
+      <p class="footer-copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+      <div class="footer-payments" aria-label="Medios de pago aceptados">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">MERCADO PAGO</span>
+        <span class="payment-chip payment-chip-highlight">TRANSFERENCIA (-15%)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Modulares -->
+  <script src="js/productos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

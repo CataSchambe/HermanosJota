@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Oficial | Hermanos Jota - Ebanistería y Diseño Contemporáneo</title>
+  
+  <!-- Tipografías Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Iconografía Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos Externa CSS3 -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra de Anuncios Superior -->
+  <div class="announcement-bar">
+    <span class="material-symbols-outlined">eco</span>
+    <p>Maderas macizas certificadas FSC® • 3 y 6 cuotas sin interés • Envíos cuidados a todo el país</p>
+  </div>
+
+  <!-- Encabezado Semántico -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-link" aria-label="Hermanos Jota - Inicio">
+        <img 
+          src="assets/logo.jpg" 
+          alt="Logotipo Hermanos Jota" 
+          class="brand-logo-img"
+        >
+        <div class="brand-text-wrap">
+          <span class="brand-name">Hermanos Jota</span>
+          <span class="brand-tagline">Mueblería y Hogar</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalogo.html" class="nav-link active" aria-current="page">Catálogo</a>
+        <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto & Citas</a>
+      </nav>
+
+      <!-- Acciones de Cabecera -->
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="search" id="header-quick-search" placeholder="Buscar por pieza o madera..." aria-label="Buscar en catálogo">
+        </div>
+
+        <button type="button" class="btn-header-action btn-open-cart" aria-label="Abrir Carrito de compras">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count-badge badge-hidden">0</span>
+        </button>
+
+        <a href="contacto.html" class="btn-header-action" aria-label="Asesoría y Citas">
+          <span class="material-symbols-outlined">support_agent</span>
+        </a>
+
+        <!-- Botón Menú Móvil -->
+        <button type="button" class="btn-mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html" class="active">Catálogo Oficial</a>
+      <a href="nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto & Citas</a>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+    <!-- Banner Editorial de Cabecera -->
+    <section class="catalog-header-banner">
+      <div class="container catalog-header-flex">
+        <div class="catalog-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Colección Oficial • Mueblería de Autor</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <h1 style="font-size: 2.25rem;">Catálogo de Mobiliario Piezas Vivas</h1>
+          <p class="text-muted" style="max-width: 44rem;">
+            Maderas nobles seleccionadas, herrajes de forja precisa y tapizados de origen honesto. Mobiliario producido con el rigor y la calidez del taller de Hermanos Jota.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <span class="counter-pill" id="counter-badge">
+            <span class="counter-dot"></span>
+            11 PIEZAS DE COLECCIÓN
+          </span>
+          <span style="font-size: 0.75rem; color: var(--color-text-muted); display: inline-flex; align-items: center; gap: 0.25rem;">
+            <span class="material-symbols-outlined" style="font-size: 1rem; color: var(--color-salvia-dark);">verified</span>
+            Garantía estructural de taller
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra Sticky de Filtros, Búsqueda y Ordenamiento -->
+    <section class="filters-bar">
+      <div class="container filters-flex">
+        <!-- Búsqueda y Orden -->
+        <div class="filters-search-sort">
+          <div class="catalog-search-wrap">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input 
+              type="search" 
+              id="catalog-search" 
+              placeholder="Buscar por nombre, madera (nogal, roble, etc.)..."
+              aria-label="Buscar en el catálogo"
+            >
+          </div>
+
+          <div class="sort-wrap">
+            <label for="sort-dropdown" class="sort-label">Ordenar:</label>
+            <select id="sort-dropdown" class="sort-select" aria-label="Ordenar productos">
+              <option value="featured">Destacados de Taller</option>
+              <option value="price-asc">Menor precio</option>
+              <option value="price-desc">Mayor precio</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Píldoras de Categoría -->
+        <div class="filter-chips" role="group" aria-label="Filtros por categoría">
+          <button type="button" class="chip-filter active" data-category="all">Todos</button>
+          <button type="button" class="chip-filter" data-category="living">Living & Sillones</button>
+          <button type="button" class="chip-filter" data-category="comedor">Comedor</button>
+          <button type="button" class="chip-filter" data-category="estudio">Dormitorio & Estudio</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grilla de Catálogo (Renderizado Asíncrono Dinámico vía DOM) -->
+    <section class="container">
+      <!-- Contenedor donde se insertan las tarjetas dinámicas -->
+      <div class="catalog-grid" id="catalog-grid">
+        <!-- El contenido se inyecta desde js/catalogo.js con simularPeticionCatalogo() -->
+      </div>
+
+      <!-- Estado Vacío (Empty State) si ningún producto coincide con la búsqueda -->
+      <div class="catalog-empty-state" id="catalog-empty-state">
+        <span class="material-symbols-outlined empty-icon">search_off</span>
+        <h3 class="empty-title">No encontramos piezas con ese criterio</h3>
+        <p class="empty-desc">Prueba buscando otro tipo de madera o restablece los filtros para ver la colección completa.</p>
+        <button type="button" class="btn-primary" id="reset-filters-btn" style="margin-top: 1rem;">
+          Restablecer Filtros
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Panel Deslizante del Carrito (Slide-over Drawer) -->
+  <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-drawer-heading" role="dialog" aria-modal="true">
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+      <div class="cart-header">
+        <div class="cart-header-title-wrap">
+          <span class="material-symbols-outlined text-siena">shopping_bag</span>
+          <h3 id="cart-drawer-heading" class="cart-title">Bolsa de Compra</h3>
+          <span class="cart-badge-count" id="drawer-count">0 piezas</span>
+        </div>
+        <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar bolsa de compra">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Renderizado dinámico desde js/carrito.js -->
+      </div>
+
+      <div class="cart-footer" id="cart-drawer-footer">
+        <div class="cart-summary-line">
+          <span>Subtotal de piezas</span>
+          <span id="cart-subtotal-val">$0 ARS</span>
+        </div>
+        <div class="cart-summary-line" style="color: var(--color-salvia-dark);">
+          <span>Descuento 15% por transferencia</span>
+          <span id="cart-discount-val">-$0 ARS</span>
+        </div>
+        <div class="cart-total-line">
+          <span class="cart-total-label">Total Estimado</span>
+          <span class="cart-total-price" id="cart-total-val">$0 ARS</span>
+        </div>
+        <p class="cart-cuotas-note" id="cart-cuotas-text">
+          Hasta 6 cuotas fijas sin interés en maderas macizas
+        </p>
+        <a href="contacto.html" class="btn-primary" style="width: 100%; text-align: center;">
+          Iniciar Consulta o Pedido
+        </a>
+        <button type="button" class="btn-link" id="clear-cart-btn" style="justify-content: center; font-size: 0.75rem; color: var(--color-text-muted);">
+          Vaciar selección
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Notificación Toast Emergente -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
+    <span class="material-symbols-outlined toast-icon">check_circle</span>
+    <div>
+      <p class="toast-title" id="toast-title">Pieza añadida</p>
+      <p class="toast-subtitle" id="toast-subtitle">Se integró al pedido</p>
+    </div>
+  </div>
+
+  <!-- Pie de Página Oficial (Réplica Exacta) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Columna 1: Marca & Origen -->
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand-header">
+          <img src="assets/logo.jpg" alt="Logo Hermanos Jota" class="footer-logo-img">
+          <div class="footer-brand-title">
+            <span>HERMANOS</span>
+            <span>JOTA</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Ebanistería contemporánea y preservación del oficio maderero. Diseñamos piezas escultóricas creadas a mano con maderas nobles certificadas y herrajes macizos que envejecen con dignidad.
+        </p>
+        <div class="footer-workshop-badge">
+          <span class="material-symbols-outlined">verified</span>
+          <span>TALLER ARTESANAL EN BUENOS AIRES</span>
+        </div>
+      </div>
+
+      <!-- Columna 2: Información Útil -->
+      <div class="footer-col footer-info-col">
+        <h4 class="footer-col-title">INFORMACIÓN ÚTIL</h4>
+        <div class="footer-info-list">
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Av. San Juan 2847 - Barrio de San Cristóbal, CABA, Argentina</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <div>
+              <div>Lunes a viernes: 10:00 a 19:00 hs</div>
+              <div>Sábados de 10:00 a 14:00</div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:+541145678900">+54 11 4567-8900</a>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">mail</span>
+            <div>
+              <div><a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></div>
+              <div><a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></div>
+            </div>
+          </div>
+          <div class="footer-info-item">
+            <span class="material-symbols-outlined">photo_camera</span>
+            <span>Instagram: @hermanosjota_ba</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3: Navegación -->
+      <div class="footer-col footer-nav-col">
+        <h4 class="footer-col-title">NAVEGACIÓN</h4>
+        <nav class="footer-links" aria-label="Enlaces rápidos del pie de página">
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html">Catálogo Completo</a>
+          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto & Citas</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4: Boletín de Taller -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-col-title">BOLETÍN DE TALLER</h4>
+        <p class="footer-newsletter-text">
+          Novedades de nuevas series, aperturas de hornadas y procesos de ebanistería.
+        </p>
+        <form id="footer-newsletter-form" class="footer-newsletter-form">
+          <input 
+            type="email" 
+            class="footer-newsletter-input" 
+            placeholder="Tu correo electrónico" 
+            required 
+            aria-label="Tu correo electrónico"
+          >
+          <button type="submit" class="footer-newsletter-btn">SUSCRIBIRME</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Derechos y Métodos de Pago -->
+    <div class="container footer-bottom-bar">
+      <p class="footer-copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+      <div class="footer-payments" aria-label="Medios de pago aceptados">
+        <span class="payment-chip">VISA</span>
+        <span class="payment-chip">MASTERCARD</span>
+        <span class="payment-chip">MERCADO PAGO</span>
+        <span class="payment-chip payment-chip-highlight">TRANSFERENCIA (-15%)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Modulares -->
+  <script src="js/productos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
