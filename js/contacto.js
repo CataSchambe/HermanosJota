@@ -13,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const successNameEl = document.getElementById('success-client-name');
   const nameError = document.getElementById('name-error');
   const emailError = document.getElementById('email-error');
+  const notesError = document.getElementById('notes-error');
 
-  // 1. Contador de caracteres en tiempo real
+  // 1. Contador de caracteres en tiempo real y limpieza de error
   if (notesTextarea && charCounter) {
     notesTextarea.addEventListener('input', () => {
       const len = notesTextarea.value.length;
@@ -23,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         charCounter.classList.add('char-limit-near');
       } else {
         charCounter.classList.remove('char-limit-near');
+      }
+      if (len > 0 && notesError) {
+        notesError.style.display = 'none';
+        notesTextarea.classList.remove('input-error');
       }
     });
   }
@@ -125,6 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       if (emailError) emailError.style.display = 'none';
       emailInput.classList.remove('input-error');
+    }
+
+    // Validación de Mensaje (Requerimiento oficial de consigna)
+    if (!notesTextarea.value.trim()) {
+      if (notesError) notesError.style.display = 'block';
+      notesTextarea.classList.add('input-error');
+      esValido = false;
+    } else {
+      if (notesError) notesError.style.display = 'none';
+      notesTextarea.classList.remove('input-error');
     }
 
     if (!esValido) {

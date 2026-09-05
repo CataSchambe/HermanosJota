@@ -171,7 +171,7 @@
           <!-- Mensaje / Notas con Contador Dinámico -->
           <div class="form-group">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <label for="client-notes">Mensaje o Especificaciones del Proyecto</label>
+              <label for="client-notes">Mensaje o Especificaciones del Proyecto *</label>
               <span style="font-size: 0.6875rem; color: var(--color-text-muted);" id="char-counter">0 / 400</span>
             </div>
             <textarea 
@@ -180,7 +180,9 @@
               rows="4" 
               maxlength="400"
               placeholder="Cuéntenos sobre el ambiente, medidas preliminares, maderas de su preferencia o planos disponibles..."
+              required
             ></textarea>
+            <span class="error-msg" id="notes-error">Por favor ingrese su mensaje o consulta.</span>
           </div>
 
           <!-- Consentimiento Newsletter -->

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hermanos Jota | Mueblería y Hogar - Diseño de Autor en Maderas Nobles</title>
+  <title>Catálogo Oficial | Hermanos Jota - Ebanistería y Diseño Contemporáneo</title>
   
-  <!-- Tipografías Google Fonts Oficiales: Playfair Display e Inter -->
+  <!-- Tipografías Google Fonts Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -21,13 +21,12 @@
   <!-- Barra de Anuncios Superior -->
   <div class="announcement-bar">
     <span class="material-symbols-outlined">eco</span>
-    <p>Mueblería y Hogar • 3 y 6 cuotas fijas sin interés en maderas macizas • Envíos cuidados a todo el país</p>
+    <p>Maderas macizas certificadas FSC® • 3 y 6 cuotas sin interés • Envíos cuidados a todo el país</p>
   </div>
 
-  <!-- Encabezado Semántico Principal -->
+  <!-- Encabezado Semántico -->
   <header class="main-header">
     <div class="container header-inner">
-      <!-- Logotipo de Marca -->
       <a href="index.html" class="brand-logo-link" aria-label="Hermanos Jota - Inicio">
         <img 
           src="assets/logo.jpg" 
@@ -42,17 +41,17 @@
 
       <!-- Navegación Desktop -->
       <nav class="nav-desktop" aria-label="Navegación principal">
-        <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
-        <a href="catalogo.html" class="nav-link">Catálogo</a>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalogo.html" class="nav-link active" aria-current="page">Catálogo</a>
         <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
         <a href="contacto.html" class="nav-link">Contacto & Citas</a>
       </nav>
 
-      <!-- Acciones de Cabecera (Buscador, Carrito, Menú Móvil) -->
+      <!-- Acciones de Cabecera -->
       <div class="header-actions">
         <div class="header-search-wrap">
           <span class="material-symbols-outlined search-icon">search</span>
-          <input type="search" placeholder="Buscar en el taller..." aria-label="Buscar productos">
+          <input type="search" id="header-quick-search" placeholder="Buscar por pieza o madera..." aria-label="Buscar en catálogo">
         </div>
 
         <button type="button" class="btn-header-action btn-open-cart" aria-label="Abrir Carrito de compras">
@@ -71,129 +70,96 @@
       </div>
     </div>
 
-    <!-- Menú Desplegable para Móviles -->
+    <!-- Menú Móvil -->
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
-      <a href="index.html" class="active">Inicio</a>
-      <a href="catalogo.html">Catálogo Oficial</a>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html" class="active">Catálogo Oficial</a>
       <a href="nosotros.html">Sobre Nosotros</a>
       <a href="contacto.html">Contacto & Citas</a>
       <a href="cuenta.html">Mi Cuenta (Pedidos & Favoritos)</a>
     </nav>
   </header>
 
-  <!-- Contenido Principal Semántico -->
+  <!-- Contenido Principal -->
   <main>
-    <!-- Sección 1: Hero Editorial -->
-    <section class="hero-section">
-      <div class="container hero-flex">
-        <div class="hero-content">
-          <div class="hero-tag">
-            <span class="material-symbols-outlined" style="font-size: 1rem;">eco</span>
-            <span>Mueblería Sostenible • Maderas FSC®</span>
-          </div>
-
-          <h1 class="hero-title">
-            Diseño Atemporal En Maderas Nobles Y Calma Visual
-          </h1>
-
-          <p class="hero-desc">
-            Concebimos cada mueble como una pieza viva de ebanistería noble. Encastres de precisión a caja y espiga, maderas argentinas certificadas y acabados con aceites vegetales que resaltan la honestidad de cada veta.
-          </p>
-
-          <div class="hero-ctas">
-            <a href="catalogo.html" class="btn-primary">
-              <span>Explorar Colección</span>
-              <span class="material-symbols-outlined" style="font-size: 1.1rem;">arrow_forward</span>
-            </a>
-            <a href="nosotros.html" class="btn-secondary">
-              <span>Manifiesto de Taller</span>
-            </a>
-          </div>
-
-          <!-- Métricas de Taller -->
-          <div class="hero-metrics">
-            <div>
-              <span class="metric-number">100%</span>
-              <span class="metric-label">Petiribí & Roble FSC®</span>
-            </div>
-            <div>
-              <span class="metric-number" style="color: var(--color-salvia-dark);">10 Años</span>
-              <span class="metric-label">Garantía estructural</span>
-            </div>
-            <div>
-              <span class="metric-number" style="color: var(--color-oro);">6 Cuotas</span>
-              <span class="metric-label">Fijas sin interés</span>
-            </div>
-          </div>
+    <!-- Banner Editorial de Cabecera -->
+    <section class="catalog-header-banner">
+      <div class="container catalog-header-flex">
+        <div class="catalog-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Colección Oficial • Mueblería de Autor</span>
         </div>
 
-        <!-- Vitrina Visual de Pieza Insignia -->
-        <div class="hero-visual-card">
-          <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUcFqLvst-HSS0l0ORr8SjojX2OsdQfbTUadtABTHn_L0GzSEv4Nb89qKFnHl9BOglJq7wnxsk59TSpc1b6Pm89ItOkq9c0RqUGpOE7XQDhYJZVNis1GThzTVJ9tgwziylrmTVCezqPNRJkf1AR9LLVYwst0jEotHCJBGka7WOLe3ZaBKc6AcYtO5UAx3haFRBqjEm1nQ0h5ljNUMTVnSwwAc41G3Twz6R2n04felLbQmKT9SJ-CrsliUy7mKBP5nMg" 
-            alt="Sillón Copacabana en cuero genuino cognac y roble macizo"
-            class="hero-visual-img"
-          >
-          <div class="hero-visual-badge">
-            <div>
-              <span style="font-size: 0.6875rem; text-transform: uppercase; color: var(--color-oro); font-weight: 600;">★ Pieza de Distinción</span>
-              <h4 class="hero-visual-badge-title">Sillón Copacabana</h4>
-              <p class="hero-visual-badge-desc">Cuero curtido anilina & base giratoria</p>
-            </div>
-            <a href="producto.html?id=copacabana" class="btn-primary" style="padding: 0.5rem 0.85rem; font-size: 0.75rem;">Ver Ficha</a>
-          </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <h1 style="font-size: 2.25rem;">Catálogo de Mobiliario Piezas Vivas</h1>
+          <p class="text-muted" style="max-width: 44rem;">
+            Maderas nobles seleccionadas, herrajes de forja precisa y tapizados de origen honesto. Mobiliario producido con el rigor y la calidez del taller de Hermanos Jota.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <span class="counter-pill" id="counter-badge">
+            <span class="counter-dot"></span>
+            11 PIEZAS DE COLECCIÓN
+          </span>
+          <span style="font-size: 0.75rem; color: var(--color-text-muted); display: inline-flex; align-items: center; gap: 0.25rem;">
+            <span class="material-symbols-outlined" style="font-size: 1rem; color: var(--color-salvia-dark);">verified</span>
+            Garantía estructural de taller
+          </span>
         </div>
       </div>
     </section>
 
-    <!-- Sección 2: Selección de Piezas Destacadas -->
-    <section style="padding: 4rem 0; background-color: rgba(245, 230, 211, 0.35); border-bottom: 1px solid var(--color-border-main);">
-      <div class="container">
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem;">
-          <div class="catalog-eyebrow">
-            <span class="eyebrow-dot"></span>
-            <span>Piezas Icónicas de Autor</span>
+    <!-- Barra Sticky de Filtros, Búsqueda y Ordenamiento -->
+    <section class="filters-bar">
+      <div class="container filters-flex">
+        <!-- Búsqueda y Orden -->
+        <div class="filters-search-sort">
+          <div class="catalog-search-wrap">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input 
+              type="search" 
+              id="catalog-search" 
+              placeholder="Buscar por nombre, madera (nogal, roble, etc.)..."
+              aria-label="Buscar en el catálogo"
+            >
           </div>
-          <h2 style="font-size: 1.875rem;">Obras Vivas en Madera Maciza</h2>
-          <p class="text-muted" style="max-width: 40rem;">
-            Cada diseño es producido bajo pedido en series limitadas, ensamblado pacientemente por maestros ebanistas en nuestro taller de Buenos Aires.
-          </p>
+
+          <div class="sort-wrap">
+            <label for="sort-dropdown" class="sort-label">Ordenar:</label>
+            <select id="sort-dropdown" class="sort-select" aria-label="Ordenar productos">
+              <option value="featured">Destacados de Taller</option>
+              <option value="price-asc">Menor precio</option>
+              <option value="price-desc">Mayor precio</option>
+            </select>
+          </div>
         </div>
 
-        <!-- Grilla de 4 productos destacados cargados dinámicamente vía DOM -->
-        <div class="catalog-grid" id="featured-products-grid" style="padding: 0;">
-          <!-- Inyectado dinámicamente desde js/productos.js mediante manipulación del DOM -->
-        </div>
-
-        <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="catalogo.html" class="btn-primary">
-            <span>Ver las 11 Piezas del Catálogo Completo</span>
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+        <!-- Píldoras de Categoría -->
+        <div class="filter-chips" role="group" aria-label="Filtros por categoría">
+          <button type="button" class="chip-filter active" data-category="all">Todos</button>
+          <button type="button" class="chip-filter" data-category="living">Living & Sillones</button>
+          <button type="button" class="chip-filter" data-category="comedor">Comedor</button>
+          <button type="button" class="chip-filter" data-category="estudio">Dormitorio & Estudio</button>
         </div>
       </div>
     </section>
 
-    <!-- Sección 3: Compromiso de Ebanistería y Beneficios -->
-    <section style="padding: 4rem 0;">
-      <div class="container">
-        <div class="pillars-grid" style="padding: 0;">
-          <div class="pillar-card">
-            <span class="pillar-num">01</span>
-            <h3 style="font-size: 1.125rem;">Madera con Trazabilidad</h3>
-            <p class="text-muted" style="font-size: 0.875rem;">Maderas macizas con certificación FSC®. Secado lento a temperatura controlada para evitar alabeos futuros.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">02</span>
-            <h3 style="font-size: 1.125rem;">Ensamble Tradicional</h3>
-            <p class="text-muted" style="font-size: 0.875rem;">Uniones a caja y espiga trabajadas manualmente sin tornillos vistos. Acabados con ceras y aceites botánicos.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">03</span>
-            <h3 style="font-size: 1.125rem;">Programa Herencia Viva</h3>
-            <p class="text-muted" style="font-size: 0.875rem;">Garantía de 10 años en estructura y servicio de restauración de por vida para preservar cada legado.</p>
-          </div>
-        </div>
+    <!-- Grilla de Catálogo (Renderizado Asíncrono Dinámico vía DOM) -->
+    <section class="container">
+      <!-- Contenedor donde se insertan las tarjetas dinámicas -->
+      <div class="catalog-grid" id="catalog-grid">
+        <!-- El contenido se inyecta desde js/catalogo.js con simularPeticionCatalogo() -->
+      </div>
+
+      <!-- Estado Vacío (Empty State) si ningún producto coincide con la búsqueda -->
+      <div class="catalog-empty-state" id="catalog-empty-state">
+        <span class="material-symbols-outlined empty-icon">search_off</span>
+        <h3 class="empty-title">No encontramos piezas con ese criterio</h3>
+        <p class="empty-desc">Prueba buscando otro tipo de madera o restablece los filtros para ver la colección completa.</p>
+        <button type="button" class="btn-primary" id="reset-filters-btn" style="margin-top: 1rem;">
+          Restablecer Filtros
+        </button>
       </div>
     </section>
   </main>
@@ -202,7 +168,6 @@
   <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-drawer-heading" role="dialog" aria-modal="true">
     <div class="cart-backdrop" id="cart-backdrop"></div>
     <div class="cart-panel">
-      <!-- Cabecera del Drawer -->
       <div class="cart-header">
         <div class="cart-header-title-wrap">
           <span class="material-symbols-outlined text-siena">shopping_bag</span>
@@ -214,12 +179,10 @@
         </button>
       </div>
 
-      <!-- Lista dinámica de ítems manipulada vía DOM -->
       <div class="cart-items-list" id="cart-items-list">
         <!-- Renderizado dinámico desde js/carrito.js -->
       </div>
 
-      <!-- Footer del Drawer con totales y botón de pedido -->
       <div class="cart-footer" id="cart-drawer-footer">
         <div class="cart-summary-line">
           <span>Subtotal de piezas</span>
@@ -351,10 +314,11 @@
     </div>
   </footer>
 
-  <!-- Scripts Modulares en JavaScript -->
+  <!-- Scripts Modulares -->
   <script src="js/productos.js"></script>
   <script src="js/favoritos.js"></script>
   <script src="js/carrito.js"></script>
+  <script src="js/catalogo.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
