@@ -1,136 +1,99 @@
-# Hermanos Jota | Mueblería y Hogar — Diseño de Autor
+﻿# Hermanos Jota | Ebanistería y Hogar
 
-> **Proyecto Académico:** ITBA — Spring 1-2  
-> **Tema:** Sitio web e-commerce de ebanistería y mobiliario de autor mid-century modern.  
-> **Tecnologías:** HTML5 Semántico, CSS3 Puro (Mobile-First & Flexbox), Vanilla JavaScript (ES6+).
+> **Proyecto Académico:** Trabajo Práctico Integrador — Spring 1-2  
+> **Institución:** Instituto Tecnológico de Buenos Aires (ITBA)  
+> **Materia:** Desarrollo FullStack  
+> **Integrante:** Schamberger Catalina  
 
 ---
 
 ## 📋 Descripción del Proyecto
 
-**Hermanos Jota** es un taller y tienda de ebanistería fundado en 1960 en Buenos Aires. El proyecto consiste en el desarrollo integral de una plataforma web moderna, accesible y 100% responsiva que celebra la autenticidad de los materiales nobles (maderas macizas FSC®, cueros curtidos vegetales y herrajes de latón) mediante una experiencia visual editorial de calma visual y alta interactividad.
+**Hermanos Jota** es una tienda de e-commerce y taller de ebanistería de autor con diseño *mid-century modern*. La plataforma está desarrollada 100% del lado del cliente (*frontend puro*), ofreciendo una experiencia inmersiva, accesible y responsiva para explorar piezas en maderas nobles, consultar especificaciones técnicas y simular el proceso de compra completo sin requerir conexión a un backend.
 
 ---
 
-## 🎯 Cumplimiento de Requisitos Pedagógicos y Técnicos
+## ✨ Funcionalidades Principales
 
-El desarrollo cumple exhaustivamente con cada uno de los 7 requerimientos de la consigna:
+- **Página de Inicio (`index.html`)**:
+  - Encabezado con logotipo, navegación accesible y contador del carrito en tiempo real.
+  - *Hero Banner* editorial con pieza insignia y llamadas a la acción.
+  - Grilla de 4 productos destacados cargados **dinámicamente vía DOM** desde un array de objetos.
+  - Bloques de manifiesto del taller, métricas artesanales y pie de página institucional.
 
-### 1. Estructura con HTML5 Semántico
-- Implementación rigurosa de etiquetas estructurales obligatorias en las 5 páginas del sitio:
-  - `<header>`: Barra de anuncios de cuotas y navegación principal con logotipo y acciones.
-  - `<nav>`: Navegación accesible tanto para pantallas de escritorio como para dispositivos móviles (`aria-label`, `aria-current="page"`).
-  - `<main>`: Contenedor único y jerárquico del contenido central de cada vista.
-  - `<section>`: Delimitación de áreas temáticas (Hero, beneficios, filtros, grilla de catálogo, manifiesto, etc.).
-  - `<article>`: Tarjetas de productos independientes (`.product-card`) y pilares conceptuales del taller.
-  - `<aside>`: Panel deslizante del carrito de compras (*slide-over drawer*) y resumen lateral de cotización.
-  - `<footer>`: Pie de página institucional con newsletter, dirección física (`<address>`) y enlaces legales.
-- Código limpio, semántico, altamente accesible y ordenadamente indentado.
+- **Catálogo de Productos (`catalogo.html` / `productos.html`)**:
+  - Grilla responsiva de tarjetas de productos generadas programáticamente con JavaScript.
+  - **Carga asíncrona simulada** (`async/await` con `setTimeout`) con indicador de carga (*spinner*).
+  - **Filtros interactivos** por categorías (Living, Comedor, Estudio) y ordenamiento por precio.
+  - **Buscador en tiempo real** por nombre, madera o tipo de mueble.
+  - Enlaces directos a la ficha técnica individual de cada producto.
 
-### 2. Estilos y Diseño Responsivo con CSS3 (Modelo de Cajas & Flexbox)
-- **100% en archivo externo:** Todos los estilos residen en [`css/styles.css`](css/styles.css), sin librerías externas en tiempo de ejecución ni código incrustado en etiquetas `<style>`.
-- **Mobile First:** Diseño pensado prioritariamente para pantallas móviles pequeñas (`320px`–`767px`), enriqueciéndose progresivamente en tablet (`768px`) y desktop (`1024px+` y `1280px`).
-- **Modelo de Cajas:** Aplicación del reset universal `*, *::before, *::after { box-sizing: border-box; }`, con control preciso de `padding`, `margin`, bordes de ebanistería (`1px solid #DAC1B8`) y sin desbordes horizontales.
-- **Flexbox en secciones principales:**
-  - Cabecera y barra de navegación (`align-items: center; justify-content: space-between;`).
-  - Distribución del Hero y vitrina visual.
-  - Grilla de catálogo flexible con ajuste automático (`flex-wrap: wrap; gap: 1.5rem;`).
-  - Tarjetas de producto flexibles (`display: flex; flex-direction: column; justify-content: space-between;`).
-  - Panel lateral del carrito estructurado en columnas flexibles (`header`, `overflow list`, `footer`).
-  - Barras de filtros y chips de categorías.
-  - Columnas del pie de página.
-- **Variables CSS (`:root`):** Implementación de la paleta oficial (*Siena Tostado* `#A0522D`, *Verde Salvia* `#87A96B`, *Alabastro Cálido* `#F5E6D3` y `#FFF8F3`, *Vara de Oro* `#D4A437`, *Rosa Polvoriento* `#C47A6D`).
+- **Detalle de Producto (`producto.html`)**:
+  - Fotografía en alta resolución con transición visual suave.
+  - **Selector de colección dinámico**: permite alternar entre piezas actualizando instantáneamente título, precio, cuotas, madera, descripción y tabla de especificaciones.
+  - Ficha técnica semántica con medidas, tipo de ensamble y años de garantía.
+  - Botón **"Añadir a la Bolsa de Compra"** vinculado al producto activo y botón para alternar **Favoritos**.
 
-### 3. Lógica de Programación Dinámica en JavaScript
-- Carrito de compras reactivo en memoria con persistencia en el navegador (`localStorage`).
-- Cálculo en tiempo real de subtotales, bonificación del 15% por transferencia bancaria y desglose de 6 cuotas fijas sin interés.
-- Filtros combinados por categoría y búsqueda textual en vivo.
-- Algoritmos de ordenamiento por destacados, menor precio y mayor precio.
-- Sistema de notificaciones emergentes animadas (*Toast notifications*).
-- Galería interactiva con conmutación de imágenes y vista detallada dinámica basada en parámetros de URL (`?id=...`).
+- **Contacto y Reserva de Citas (`contacto.html`)**:
+  - Formulario con campos de Nombre, Email, Mensaje y selección de turnos de visita al taller.
+  - **Validación del lado del cliente** en JavaScript (comprobación de campos requeridos y formato de correo con expresiones regulares).
+  - **Mensaje de éxito inyectado vía DOM** tras el envío correcto.
+  - Resumen lateral sincronizado con los artículos añadidos al carrito.
 
-### 4. Manipulación del DOM
-- Renderizado programático de tarjetas de productos mediante la creación y ensamblaje de nodos del DOM (`document.createElement`, `classList`, atributos y fragmentos `DocumentFragment`).
-- Actualización reactiva de contadores y badges numéricos en la cabecera.
-- Modificación dinámica de la lista del carrito al sumar, restar unidades o eliminar piezas, incluyendo el estado vacío (*empty state*).
-- Ocultamiento y aparición fluida de bloques del formulario de reserva según la opción seleccionada.
-
-### 5. Arrays de Objetos
-- En [`js/productos.js`](js/productos.js) se gestiona la colección completa `PRODUCTOS`, un array de 11 objetos que representan las piezas auténticas del catálogo oficial de Hermanos Jota con todos sus atributos:
-  - `id`, `nombre`, `categoria`, `subcategoria`, `precio`, `madera`, `maderaNombre`, `materialDetalle`, `descripcion`, `imagen`, `badge`, `badgeTipo`, `destacado`, `cuotas`, `cuotaMonto`, `garantia`, `medidas`, `stock`.
-
-### 6. Carga Asíncrona Simulada (setTimeout / async-await)
-- En [`js/catalogo.js`](js/catalogo.js), la función `inicializarCatalogo()` invoca a `simularPeticionCatalogo()`, la cual retorna una `Promise` que resuelve a los 750 milisegundos simulando una llamada a una API o base de datos.
-- Durante la espera asíncrona, el DOM muestra un indicador visual de carga (*spinner animado con mensaje editorial*) antes de renderizar la grilla con transiciones suaves.
-
-### 7. Interacción del Usuario mediante Eventos (addEventListener)
-- Cero atributos de eventos en línea (`onclick="..."` en HTML); toda la interactividad está vinculada mediante `addEventListener`:
-  - Eventos de clic (`click`): añadir al carrito, abrir/cerrar drawer, filtros de categoría, selector de miniaturas, botones de cantidad (+ / -), vaciar carrito.
-  - Eventos de entrada (`input`): búsqueda instantánea en catálogo y sincronización con el contador de caracteres (`0 / 400`) en el textarea.
-  - Eventos de cambio (`change`): selector de ordenamiento por precio y desplegable de motivo de consulta.
-  - Eventos de teclado (`keydown`): cierre del carrito de compras al presionar la tecla `Escape`.
-  - Eventos de formulario (`submit`): validación antes del envío en la reserva de citas y suscripción al newsletter.
+- **Experiencia de Compra Simulada**:
+  - Carrito deslizable (*slide-over drawer*) con actualización de cantidades, cálculo de 6 cuotas sin interés y descuento del 15% por transferencia.
+  - Persistencia de datos en el navegador mediante `localStorage`.
+  - Flujo de checkout guiado (`checkout.html`) y sección de usuario con historial de órdenes y lista de favoritos (`cuenta.html`).
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5 Semántico**:
+  - Estructuración rigurosa mediante etiquetas estándar: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<table>`, `<address>`.
+  - Código limpio, accesible y correctamente indentado.
+
+- **CSS3 Puro**:
+  - Metodología **Mobile First** con diseño 100% responsivo adaptable a móviles, tablets y computadoras de escritorio.
+  - Maquetación flexible con **Flexbox** para la distribución de componentes y grillas.
+  - Estilos centralizados en archivo externo único ([`css/styles.css`](css/styles.css)) utilizando variables CSS (`:root`) para la paleta de color oficial.
+
+- **JavaScript Vanilla (ES6+)**:
+  - Colección de datos gestionada localmente mediante **Arrays de Objetos** ([`js/productos.js`](js/productos.js)).
+  - **Manipulación dinámica del DOM** (`document.createElement`, `DocumentFragment`, modificación de nodos y clases).
+  - **Asincronía** simulada con `Promises` y sintaxis `async / await`.
+  - Manejo de interactividad exclusivamente mediante `addEventListener` (`click`, `input`, `change`, `submit`, `popstate`, `keydown`).
+  - Persistencia de estado en cliente con `localStorage`.
+
+- **Control de Versiones**:
+  - Git y GitHub para la gestión del repositorio y seguimiento de cambios: [Repositorio Oficial](https://github.com/CataSchambe/HermanosJota).
+
+---
+
+## 📂 Estructura del Repositorio
 
 ```text
 Hermanos_Jota/
-│
-├── index.html           # Página de Inicio: Hero, piezas destacadas, métricas y manifiesto
-├── catalogo.html        # Catálogo Oficial: Carga asíncrona, filtros interactivos y búsqueda
-├── producto.html        # Detalle de Producto: Galería interactiva, dimensiones y ficha técnica
-├── nosotros.html        # Sobre Nosotros: Historia de Juan José y Carla, 3 pilares y Programa Herencia Viva
-├── contacto.html        # Contacto & Citas: Formulario validado, turnos para Showroom y resumen en vivo
-│
+├── index.html           # Página de Inicio (Hero y destacados dinámicos)
+├── catalogo.html        # Catálogo de Productos (Grilla, filtros, búsqueda y carga asíncrona)
+├── productos.html       # Alias oficial del Catálogo según consigna
+├── producto.html        # Detalle de Producto dinámico
+├── nosotros.html        # Sobre Nosotros (Manifiesto de taller e historia)
+├── contacto.html        # Contacto & Citas (Formulario con validación JS)
+├── checkout.html        # Checkout y finalización de orden
+├── cuenta.html          # Mi Cuenta (Órdenes de compra y favoritos)
+├── assets/
+│   └── logo.jpg         # Isotipo oficial de la marca
 ├── css/
-│   └── styles.css       # Hoja de estilos externa única, 100% responsiva (Mobile First & Flexbox)
-│
+│   └── styles.css       # Hoja de estilos externa única (Mobile First & Flexbox)
 ├── js/
-│   ├── productos.js     # Colección de datos (Array de objetos con 11 piezas y utilidades)
-│   ├── carrito.js       # Lógica integral del carrito de compras (localStorage, drawer y badges)
-│   ├── catalogo.js      # Lógica de catálogo (Promise asíncrona, render DOM, filtros y orden)
-│   ├── contacto.js      # Validación de formulario, reserva de citas y contador de caracteres
-│   └── main.js          # Navegación móvil, conmutador de fotos y utilidades globales
-│
-├── .gitignore           # Exclusiones para Visual Studio, Git y archivos de sistema
-└── README.md            # Documentación exhaustiva del proyecto
+│   ├── productos.js     # Array de objetos con el catálogo oficial
+│   ├── carrito.js       # Lógica del carrito y persistencia en localStorage
+│   ├── catalogo.js      # Lógica de carga asíncrona, filtros y renderizado DOM
+│   ├── contacto.js      # Validación del formulario y reserva de turnos
+│   ├── checkout.js      # Lógica de pasos de pago y generación de órdenes
+│   ├── favoritos.js     # Gestión de piezas guardadas en wishlist
+│   └── main.js          # Navegación móvil, destacados dinámicos y utilidades
+├── .gitignore           # Exclusiones de Git
+└── README.md            # Documentación general del proyecto
 ```
-
----
-
-## 💻 Cómo Trabajar el Proyecto en Visual Studio / VS Code
-
-### Opción 1: Visual Studio Code
-1. Abre **Visual Studio Code**.
-2. Ve a **Archivo** > **Abrir carpeta...** y selecciona la carpeta `Hermanos_Jota`.
-3. Instala la extensión **Live Server** (creada por *Ritwick Dey*) desde la pestaña de extensiones (`Ctrl + Shift + X`).
-4. Haz clic derecho sobre el archivo [`index.html`](index.html) y selecciona **"Open with Live Server"** (o presiona `Alt + L, Alt + O`).
-5. El sitio se abrirá automáticamente en tu navegador predeterminado en `http://127.0.0.1:5500/index.html`.
-
-### Opción 2: Visual Studio (IDE Tradicional)
-1. Abre **Visual Studio**.
-2. Selecciona **Archivo** > **Abrir** > **Carpeta de sitios web** o **Abrir carpeta local**.
-3. Selecciona la carpeta `Hermanos_Jota`.
-4. Haz clic derecho sobre `index.html` y elige **"Ver en el explorador"** (`Ctrl + Shift + W`).
-
-## 🎨 Guía de Estilo y Paleta Oficial
-
-| Muestra | Color | Código HEX | Rol en el Diseño |
-| :---: | :--- | :---: | :--- |
-| 🟫 | **Siena Tostado** | `#A0522D` | Color primario de marca, títulos y botones principales |
-| 🟩 | **Verde Salvia** | `#87A96B` | Sustentabilidad, maderas certificadas FSC® e insignias |
-| 🟨 | **Vara de Oro** | `#D4A437` | Acentos premium, estrellas y piezas de autor |
-| 🌸 | **Rosa Polvoriento** | `#C47A6D` | Acento suave, bouclé aterciopelado y favoritos |
-| 📜 | **Alabastro Cálido** | `#F5E6D3` | Fondos de tarjetas, chips de filtros y secciones |
-| ⚪ | **Alabastro Superficie** | `#FFF8F3` | Fondo base de lectura del sitio |
-
-- **Tipografía de Encabezados:** *Playfair Display* (Serif, mayúsculas, tracking amplio).
-- **Tipografía de Cuerpo y Botones:** *Inter* (Sans-serif, altura de línea 1.6 para lectura cómoda).
----
-## 👥 Créditos y Autoría
-- **Institución:** Instituto Tecnológico de Buenos Aires (ITBA)
-- **Materia:** Desarrollo FullStack / Spring 1-2
-- **Nombre completo** : Catalina Schamberger
-- **Proyecto:** Hermanos Jota — Ebanistería y Hogar
